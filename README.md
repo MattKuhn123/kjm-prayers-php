@@ -50,7 +50,7 @@
 
 ### how to deploy to server
 
-1. copy files to `htdocs/`
+1. copy files to `htdocs\`
 
 ### how to run server
 
