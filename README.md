@@ -16,6 +16,8 @@
 
 ## how to run on server
 
+[reference](https://www.sitepoint.com/how-to-install-php-on-windows/#installingapacheoptional)
+
 ### how to configure server environment
 
 1. [download thread safe executable](https://windows.php.net/download#php-8.3)
