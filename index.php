@@ -11,7 +11,7 @@
 
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // …
 }
 
@@ -26,6 +26,11 @@ $prayers = array(
 <body>
     <table id="prayer-table">
         <thead>
+            <tr>
+                <th colspan="4">
+                    <h1>Prayers</h1>
+                </th>
+            </tr>
             <tr>
                 <th></th>
                 <th>Name</th>
@@ -48,37 +53,29 @@ $prayers = array(
         </tbody>
     </table>
 
-    <form action='/index.php' method="post">
-        <div class='form-control'>
-            <label for='first-name'>First Name</label>
-            <input required id='first-name' name='first-name' type='text' />
-        </div>
-        <div class='form-control'>
-            <label for='last-name'>Last Name</label>
-            <input required id='last-name' name='last-name' type='text' />
-        </div>
-        <div class='form-control'>
-            <label for='county'>County</label>
-            <select id='county' name='county'>
-                <option value='Boone'>Boone</option>
-                <option value='Campbell'>Campbell</option>
-                <option value='Kenton'>Kenton</option>
-                <option value='Grant'>Grant</option>
-            </select>
-        </div>
-        <div class='form-control'>
-            <label for='date'>Date</label>
-            <input required id='date' name='date' type='date' />
-        </div>
-        <div class='form-control'>
-            <label for='prayer'>Prayer</label>
-            <textarea required id='prayer-text' name='prayer-text' rows='5'></textarea>
-        </div>
-        <input type='submit' class='btn btn-primary' />
-        <span></span>
+    <form id="prayer-new" action="/index.php" method="post">
+        <label for="first-name">First Name</label>
+        <input required id="first-name" name="first-name" type="text" />
+
+        <label for="last-name">Last Name</label>
+        <input required id="last-name" name="last-name" type="text" />
+
+        <label for="county">County</label>
+        <select id="county" name="county">
+            <option value="Boone">Boone</option>
+            <option value="Campbell">Campbell</option>
+            <option value="Kenton">Kenton</option>
+            <option value="Grant">Grant</option>
+        </select>
+
+        <label for="date">Date</label>
+        <input required id="date" name="date" type="date" />
+
+        <label for="prayer">Prayer</label>
+        <textarea required id="prayer-text" name="prayer-text" rows="5"></textarea>
+
+        <input type="submit" class="btn btn-primary" />
     </form>
-
-
 </body>
 
 </html>
