@@ -14,6 +14,10 @@
 
 1. execute `php -S localhost:8000`
 
+### recommended vs code extensions
+
+1. PHP Intelephense
+
 ## how to run on server
 
 [reference](https://www.sitepoint.com/how-to-install-php-on-windows/#installingapacheoptional)
