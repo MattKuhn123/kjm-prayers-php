@@ -14,6 +14,8 @@
 $prayers = array(
     array("first_name" => "Matt", "last_name" => "Kuhn", "county" => "Kenton", "date" => date_create("2024-01-20")),
     array("first_name" => "Joe", "last_name" => "Smith", "county" => "Campbell", "date" => date_create("2024-01-22")),
+    array("first_name" => "Ricky", "last_name" => "Sanchez", "county" => "Boone", "date" => date_create("2024-01-24")),
+    array("first_name" => "Bobby", "last_name" => "Rodriguez", "county" => "Grant", "date" => date_create("2024-01-26")),
 );
 ?>
 
@@ -29,7 +31,7 @@ $prayers = array(
         <tbody>
             <?php foreach ($prayers as $prayer) : ?>
                 <tr>
-                    <td><?= htmlspecialchars($prayer["first_name"] ." " . $prayer["last_name"]) ?></td>
+                    <td><?= htmlspecialchars($prayer["first_name"] . " " . $prayer["last_name"]) ?></td>
                     <td><?= htmlspecialchars($prayer["county"]) ?></td>
                     <td><?= date_format($prayer["date"], "Y/m/d") ?></td>
                 </tr>
