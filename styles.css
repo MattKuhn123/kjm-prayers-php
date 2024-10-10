@@ -2,15 +2,26 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-table {
+table#prayer-table {
     box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, .2), 0px 2px 2px 0px rgba(0, 0, 0, .14), 0px 1px 5px 0px rgba(0, 0, 0, .12);
+    width: 80%;
 }
 
-th {
+table#prayer-table thead tr th {
     border-bottom: 1px solid rgb(140 140 140);
 }
 
-tr:nth-child(2n) {
+/* 🙏 */
+table#prayer-table tr:nth-child(2n - 1) td:first-child{
+    text-align: center;
+    border-right: 1px solid rgb(140 140 140);
+}
+
+table#prayer-table tr:nth-child(2n) td:first-child{
+    padding: 1rem;
+}
+
+table#prayer-table tr:nth-child(2n - 1) {
     background-color: rgb(220 220 220);
 }
 
@@ -32,24 +43,6 @@ dialog {
 
 details {
     margin: 5px;
-}
-
-#pages {
-    margin-top: 5px;
-}
-
-.tab-content {
-    display: none;
-}
-
-.tab-content:target {
-    display: block;
-}
-
-.menu {
-    list-style-type: none;
-    display: flex;
-    padding: 0px;
 }
 
 .container {
