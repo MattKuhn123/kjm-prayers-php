@@ -122,6 +122,7 @@ $db->close();
         <tfoot>
             <tr>
                 <th colspan="4">
+                    <!-- Not sure I like this here, anymore. I keep mistaking it for the query button -->
                     <input value="New prayer" onclick="document.getElementById('prayer-dialog').showModal()" class="btn btn-primary" type="button" />
                 </th>
             </tr>
