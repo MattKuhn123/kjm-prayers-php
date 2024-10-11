@@ -26,6 +26,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 
 $sql = "SELECT * FROM `kjm`.`prayers` WHERE 1=1";
+if (!empty($_GET["query-name"])) {
+    $query_name = trim($_GET["query-name"]);
+    $sql .= " AND CONCAT(`first_name`, `last_name`) LIKE '%$query_name%'";
+}
+
+if (!empty($_GET["query-county"])) {
+    $query_county = trim($_GET["query-county"]);
+    $sql .= " AND `county` = '$query_county'";
+}
+
+if (!empty($_GET["query-date-start"])) {
+    $query_date_start = trim($_GET["query-date-start"]);
+    $sql .= " AND `date` >= STR_TO_DATE('$query_date_start', '%Y-%m-%d')";
+}
+
+if (!empty($_GET["query-date-end"])) {
+    $query_date_end = trim($_GET["query-date-end"]);
+    $sql .= " AND `date` <= STR_TO_DATE('$query_date_end', '%Y-%m-%d')";
+}
+
 $prayers = $db->query($sql);
 $db->close();
 ?>
@@ -53,6 +73,7 @@ $db->close();
         </form>
     </dialog>
 
+    <form id="query-prayer-form"></form>
     <table id="prayer-table">
         <thead>
             <tr>
@@ -66,11 +87,29 @@ $db->close();
                 <th>County</th>
                 <th>Date</th>
             </tr>
+            <tr>
+                <th><input value="🔎" type="submit" form="query-prayer-form"/></th>
+                <th><input value="<?= !empty($_GET["query-name"]) ? $_GET["query-name"] : "" ?>" id="query-name" name="query-name" type="text" form="query-prayer-form" /></th>
+                <th>
+                    <select id="query-county" name="query-county" form="query-prayer-form">
+                        <option></option>
+                        <option <?php if(!empty($_GET["query-county"]) && $_GET["query-county"] === "Boone") echo("selected"); ?>>Boone</option>
+                        <option <?php if(!empty($_GET["query-county"]) && $_GET["query-county"] === "Campbell") echo("selected"); ?>>Campbell</option>
+                        <option <?php if(!empty($_GET["query-county"]) && $_GET["query-county"] === "Kenton") echo("selected"); ?>>Kenton</option>
+                        <option <?php if(!empty($_GET["query-county"]) && $_GET["query-county"] === "Grant") echo("selected"); ?>>Grant</option>
+                    </select>
+                </th>
+                <th>
+                    <input value="<?= !empty($_GET["query-date-start"]) ? $_GET["query-date-start"] : "" ?>" id="query-date-start" name="query-date-start" type="date" form="query-prayer-form" />
+                    -
+                    <input value="<?= !empty($_GET["query-date-end"]) ? $_GET["query-date-end"] : "" ?>" id="query-date-end" name="query-date-end" type="date" form="query-prayer-form" />
+                </th>
+            </tr>
         </thead>
         <tbody>
             <?php foreach ($prayers as $prayer) : ?>
                 <tr>
-                    <td rowspan="2">🙏</td>
+                    <td rowspan="2"></td>
                     <td><?= htmlspecialchars($prayer["first_name"] . " " . $prayer["last_name"]) ?></td>
                     <td><?= htmlspecialchars($prayer["county"]) ?></td>
                     <td><time datetime="<?= $prayer["date"] ?>"><?= $prayer["date"] ?></time></td>
@@ -83,7 +122,7 @@ $db->close();
         <tfoot>
             <tr>
                 <th colspan="4">
-                    <input value="New prayer" onclick="document.getElementById('prayer-dialog').showModal()" class="btn btn-primary" />
+                    <input value="New prayer" onclick="document.getElementById('prayer-dialog').showModal()" class="btn btn-primary" type="button" />
                 </th>
             </tr>
         </tfoot>
