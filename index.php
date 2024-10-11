@@ -76,18 +76,18 @@ $db->close();
     <form id="query-prayer-form"></form>
     <table id="prayer-table">
         <thead>
-            <tr>
+            <tr id="table-header">
                 <th colspan="4">
                     <p>Prayers</p>
                 </th>
             </tr>
-            <tr>
+            <tr id="column-headers">
                 <th>⛪</th>
                 <th>Name</th>
                 <th>County</th>
                 <th>Date</th>
             </tr>
-            <tr>
+            <tr id="query-inputs">
                 <th><input value="🔎" type="submit" form="query-prayer-form"/></th>
                 <th><input value="<?= !empty($_GET["query-name"]) ? $_GET["query-name"] : "" ?>" id="query-name" name="query-name" type="text" form="query-prayer-form" /></th>
                 <th>
