@@ -44,7 +44,8 @@ form#prayer-form {
 
 form#prayer-form input,
 form#prayer-form select,
-form#prayer-form textarea {
+form#prayer-form textarea,
+form#prayer-image-form input {
     display: block;
     margin-bottom: 10px;
 }

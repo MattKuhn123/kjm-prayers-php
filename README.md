@@ -12,6 +12,8 @@
 
 ### how to run locally
 
+1. add `apiKey` environment variable in `php.ini`
+1. uncomment *(delete the semicolon)* `extension=openssl` in `php.ini`
 1. uncomment *(delete the semicolon)* `extension=mysqli` in `php.ini`
 1. set the properties under `[MySQLi]`
     1. mysqli.default_host =localhost
@@ -111,6 +113,8 @@
         DirectoryIndex index.php index.html
     </IfModule>
     ```
+1. add `apiKey` environment variable in `php.ini`
+1. uncomment *(delete the semicolon)* `extension=openssl` in `php.ini`
 1. uncomment *(delete the semicolon)* `extension=mysqli` in `php.ini`
 1. set the properties under `[MySQLi]`
     1. mysqli.default_host =localhost
