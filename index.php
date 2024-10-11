@@ -31,33 +31,25 @@ $db->close();
 ?>
 
 <body>
-    <dialog>
+    <dialog id="prayer-dialog">
         <form id="prayer-form" action="/" method="post">
             <label for="first-name">First Name</label>
             <input required id="first-name" name="first-name" type="text" />
-
             <label for="last-name">Last Name</label>
             <input required id="last-name" name="last-name" type="text" />
-
             <label for="county">County</label>
             <select id="county" name="county">
-                <option value="Boone">Boone</option>
-                <option value="Campbell">Campbell</option>
-                <option value="Kenton">Kenton</option>
-                <option value="Grant">Grant</option>
+                <option>Boone</option>
+                <option>Campbell</option>
+                <option>Kenton</option>
+                <option>Grant</option>
             </select>
-
             <label for="date">Date</label>
             <input required id="date" name="date" type="date" />
-
             <label for="prayer">Prayer</label>
             <textarea required id="prayer" name="prayer" rows="5"></textarea>
-
             <input type="submit" class="btn btn-primary" />
-            <input
-                value="Cancel"
-                onclick="document.getElementsByTagName('dialog')[0].close()"
-                class="btn btn-secondary" />
+            <input value="Cancel" onclick="document.getElementById('prayer-dialog').close()" class="btn btn-secondary" />
         </form>
     </dialog>
 
@@ -91,16 +83,11 @@ $db->close();
         <tfoot>
             <tr>
                 <th colspan="4">
-                    <button
-                        class="btn btn-primary"
-                        onclick="document.getElementsByTagName('dialog')[0].showModal()">
-                        New prayer
-                    </button>
+                    <input value="New prayer" onclick="document.getElementById('prayer-dialog').showModal()" class="btn btn-primary" />
                 </th>
             </tr>
         </tfoot>
     </table>
-
 </body>
 
 </html>
