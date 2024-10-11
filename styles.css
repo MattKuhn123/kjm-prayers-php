@@ -17,11 +17,13 @@ table#prayer-table thead tr th {
 }
 
 /* prayer */
-table#prayer-table tr:nth-child(2n) td:first-child {
+table#prayer-table tbody tr:nth-child(even) td:first-child {
     padding: 10px;
 }
 
-table#prayer-table tr:nth-child(2n - 1) {
+table#prayer-table thead tr,
+table#prayer-table tfoot tr,
+table#prayer-table tbody tr:nth-child(odd) {
     background-color: rgb(220 220 220);
 }
 
@@ -48,15 +50,22 @@ form#prayer-form textarea {
 }
 
 .btn {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    width: 14em; /* 20 - "Submit".length, trying to match default input width */
     text-align: center;
     display: inline-block;
     cursor: pointer;
     border: 1px solid rgb(140 140 140);
     border-radius: 5px;
     text-decoration: none;
+}
+
+.btn-fat {
+    padding: 15px;
+}
+
+.btn-input {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 14em; /* 20 - "Submit".length, trying to match default input width */
 }
 
 .btn-primary {

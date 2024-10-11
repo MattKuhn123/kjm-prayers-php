@@ -25,28 +25,46 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->close();
 }
 
-$sql = "SELECT * FROM `kjm`.`prayers` WHERE 1=1";
+$query = "SELECT * FROM `kjm`.`prayers`";
+$where_clause = " WHERE 1 = 1";
 if (!empty($_GET["query-name"])) {
     $query_name = trim($_GET["query-name"]);
-    $sql .= " AND CONCAT(`first_name`, `last_name`) LIKE '%$query_name%'";
+    $where_clause .= " AND CONCAT(`first_name`, `last_name`) LIKE '%$query_name%'";
 }
 
 if (!empty($_GET["query-county"])) {
     $query_county = trim($_GET["query-county"]);
-    $sql .= " AND `county` = '$query_county'";
+    $where_clause .= " AND `county` = '$query_county'";
 }
 
 if (!empty($_GET["query-date-start"])) {
     $query_date_start = trim($_GET["query-date-start"]);
-    $sql .= " AND `date` >= STR_TO_DATE('$query_date_start', '%Y-%m-%d')";
+    $where_clause .= " AND `date` >= STR_TO_DATE('$query_date_start', '%Y-%m-%d')";
 }
 
 if (!empty($_GET["query-date-end"])) {
     $query_date_end = trim($_GET["query-date-end"]);
-    $sql .= " AND `date` <= STR_TO_DATE('$query_date_end', '%Y-%m-%d')";
+    $where_clause .= " AND `date` <= STR_TO_DATE('$query_date_end', '%Y-%m-%d')";
 }
 
-$prayers = $db->query($sql);
+$query .= $where_clause . " ORDER BY `date` DESC";
+
+$page_index = 0;
+if (!empty($_GET['query-page-index'])) {
+    $page_index = (int) trim($_GET["query-page-index"]);
+}
+
+$page_length = 10;
+$offset = $page_index * $page_length;
+$query .= " LIMIT " . $offset . "," . $page_length;
+
+$prayers = $db->query($query);
+
+$count_query = "SELECT COUNT(*) FROM `kjm`.`prayers`" . $where_clause;
+$count_result = $db->query($count_query);
+$count = $count_result->fetch_row()[0];
+$pages = ceil($count / $page_length);
+
 $db->close();
 ?>
 
@@ -68,8 +86,8 @@ $db->close();
             <input required id="date" name="date" type="date" />
             <label for="prayer">Prayer</label>
             <textarea required id="prayer" name="prayer" rows="5"></textarea>
-            <input type="submit" class="btn btn-primary" />
-            <input value="Cancel" onclick="document.getElementById('prayer-dialog').close()" class="btn btn-secondary" />
+            <input type="submit" class="btn btn-primary btn-input" />
+            <input value="Cancel" onclick="document.getElementById('prayer-dialog').close()" class="btn btn-secondary btn-input" />
         </form>
     </dialog>
 
@@ -88,15 +106,15 @@ $db->close();
                 <th>Date</th>
             </tr>
             <tr id="query-inputs">
-                <th><input value="🔎" type="submit" form="query-prayer-form"/></th>
-                <th><input value="<?= !empty($_GET["query-name"]) ? $_GET["query-name"] : "" ?>" id="query-name" name="query-name" type="text" form="query-prayer-form" /></th>
+                <th><input value="🔎" type="submit" form="query-prayer-form" /></th>
+                <th><input value="<?= !empty($_GET["query-name"]) ? $_GET["query-name"] : "" ?>" id="query-name" name="query-name" type="search" form="query-prayer-form" /></th>
                 <th>
                     <select id="query-county" name="query-county" form="query-prayer-form">
                         <option></option>
-                        <option <?php if(!empty($_GET["query-county"]) && $_GET["query-county"] === "Boone") echo("selected"); ?>>Boone</option>
-                        <option <?php if(!empty($_GET["query-county"]) && $_GET["query-county"] === "Campbell") echo("selected"); ?>>Campbell</option>
-                        <option <?php if(!empty($_GET["query-county"]) && $_GET["query-county"] === "Kenton") echo("selected"); ?>>Kenton</option>
-                        <option <?php if(!empty($_GET["query-county"]) && $_GET["query-county"] === "Grant") echo("selected"); ?>>Grant</option>
+                        <option <?php if (!empty($_GET["query-county"]) && $_GET["query-county"] === "Boone") echo ("selected"); ?>>Boone</option>
+                        <option <?php if (!empty($_GET["query-county"]) && $_GET["query-county"] === "Campbell") echo ("selected"); ?>>Campbell</option>
+                        <option <?php if (!empty($_GET["query-county"]) && $_GET["query-county"] === "Kenton") echo ("selected"); ?>>Kenton</option>
+                        <option <?php if (!empty($_GET["query-county"]) && $_GET["query-county"] === "Grant") echo ("selected"); ?>>Grant</option>
                     </select>
                 </th>
                 <th>
@@ -107,7 +125,7 @@ $db->close();
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($prayers as $prayer) : ?>
+            <?php foreach ($prayers as $prayer): ?>
                 <tr>
                     <td rowspan="2"></td>
                     <td><?= htmlspecialchars($prayer["first_name"] . " " . $prayer["last_name"]) ?></td>
@@ -121,9 +139,19 @@ $db->close();
         </tbody>
         <tfoot>
             <tr>
-                <th colspan="4">
-                    <!-- Not sure I like this here, anymore. I keep mistaking it for the query button -->
-                    <input value="New prayer" onclick="document.getElementById('prayer-dialog').showModal()" class="btn btn-primary" type="button" />
+                <th>
+
+                </th>
+                <th>
+                    <label for="query-page-index">Page</label>
+                    <select id="query-page-index" name="query-page-index" form="query-prayer-form" onchange="document.getElementById('query-prayer-form').submit()">
+                        <?php for ($x = 0; $x < $pages; $x++): ?>
+                            <option value="<?= $x ?>" <?php if ($x === $page_index) echo ("selected"); ?>><?= ($x + 1) ?></option>
+                        <?php endfor ?>
+                    </select>
+                </th>
+                <th colspan="2">
+                    <input value="New prayer" onclick="document.getElementById('prayer-dialog').showModal()" class="btn btn-primary btn-input" type="button" />
                 </th>
             </tr>
         </tfoot>
