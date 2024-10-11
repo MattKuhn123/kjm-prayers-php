@@ -26,7 +26,6 @@ $prayers = array(
 <body>
     <dialog>
         <form id="prayer-new" action="/index.php" method="post">
-            <h1>New prayer</h1>
             <label for="first-name">First Name</label>
             <input required id="first-name" name="first-name" type="text" />
 
@@ -48,6 +47,10 @@ $prayers = array(
             <textarea required id="prayer-text" name="prayer-text" rows="5"></textarea>
 
             <input type="submit" class="btn btn-primary" />
+            <input 
+                value="Cancel"
+                onclick="document.getElementsByTagName('dialog')[0].close()" 
+                class="btn btn-secondary" />
         </form>
     </dialog>
 
@@ -55,11 +58,11 @@ $prayers = array(
         <thead>
             <tr>
                 <th colspan="4">
-                    <h1>Prayers</h1>
+                    <p>Prayers</p>
                 </th>
             </tr>
             <tr>
-                <th></th>
+                <th>🤲</th>
                 <th>Name</th>
                 <th>County</th>
                 <th>Date</th>
@@ -78,6 +81,17 @@ $prayers = array(
                 </tr>
             <?php endforeach ?>
         </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="4">
+                    <button
+                        class="btn btn-primary"
+                        onclick="document.getElementsByTagName('dialog')[0].showModal()">
+                        New prayer
+                    </button>
+                </th>
+            </tr>
+        </tfoot>
     </table>
 
 </body>

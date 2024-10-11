@@ -7,23 +7,26 @@ table#prayer-table {
     box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, .2), 0px 2px 2px 0px rgba(0, 0, 0, .14), 0px 1px 5px 0px rgba(0, 0, 0, .12);
 }
 
+table#prayer-table tfoot tr th button {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
 table#prayer-table thead tr th {
     border-bottom: 1px solid rgb(140 140 140);
 }
 
-/* 🙏 */
-table#prayer-table tr:nth-child(2n - 1) td:first-child {
-    text-align: center;
-    border-right: 1px solid rgb(140 140 140);
-}
-
 /* prayer */
 table#prayer-table tr:nth-child(2n) td:first-child {
-    padding: 1rem;
+    padding: 10px;
 }
 
 table#prayer-table tr:nth-child(2n - 1) {
     background-color: rgb(220 220 220);
+}
+
+table#prayer-table tbody tr:hover {
+    background-color: #f9831b;
 }
 
 input[type='text']:read-only,
@@ -35,8 +38,6 @@ textarea:read-only {
 form#prayer-new {
     margin: 5px;
     padding: 5px;
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, .2), 0px 2px 2px 0px rgba(0, 0, 0, .14), 0px 1px 5px 0px rgba(0, 0, 0, .12);
-    width: fit-content;
 }
 
 form#prayer-new input,
@@ -61,4 +62,9 @@ form#prayer-new textarea {
 .btn-primary {
     color: black;
     background-color: #f9831b;
+}
+
+.btn-secondary {
+    color: black;
+    background-color: rgb(220 220 220);
 }
