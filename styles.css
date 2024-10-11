@@ -35,14 +35,14 @@ textarea:read-only {
     background-color: rgb(220 220 220);
 }
 
-form#prayer-new {
+form#prayer-form {
     margin: 5px;
     padding: 5px;
 }
 
-form#prayer-new input,
-form#prayer-new select,
-form#prayer-new textarea {
+form#prayer-form input,
+form#prayer-form select,
+form#prayer-form textarea {
     display: block;
     margin-bottom: 10px;
 }

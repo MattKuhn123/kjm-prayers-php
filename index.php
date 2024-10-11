@@ -1,7 +1,3 @@
-<?php
-include("db.php");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,18 +10,29 @@ include("db.php");
 </head>
 
 <?php
+$db = mysqli_connect();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // …
+    $first_name = trim($_POST["first-name"]);
+    $last_name = trim($_POST["last-name"]);
+    $county = trim($_POST["county"]);
+    $date = trim($_POST["date"]);
+    $prayer = trim($_POST["prayer"]);
+
+    $stmt = $db->prepare("INSERT INTO `kjm`.`prayers` (first_name, last_name, county, date, prayer) VALUES (?, ?, ?, STR_TO_DATE(?, '%Y-%m-%d'), ?)");
+    $stmt->bind_param("sssss", $first_name, $last_name, $county, $date, $prayer);
+    $stmt->execute();
+    $stmt->close();
 }
 
-$sql = "SELECT * FROM `kjm`.`prayers` WHERE 1=1"; 
+$sql = "SELECT * FROM `kjm`.`prayers` WHERE 1=1";
 $prayers = $db->query($sql);
+$db->close();
 ?>
 
 <body>
     <dialog>
-        <form id="prayer-new" action="/index.php" method="post">
+        <form id="prayer-form" action="/" method="post">
             <label for="first-name">First Name</label>
             <input required id="first-name" name="first-name" type="text" />
 
@@ -44,7 +51,7 @@ $prayers = $db->query($sql);
             <input required id="date" name="date" type="date" />
 
             <label for="prayer">Prayer</label>
-            <textarea required id="prayer-text" name="prayer-text" rows="5"></textarea>
+            <textarea required id="prayer" name="prayer" rows="5"></textarea>
 
             <input type="submit" class="btn btn-primary" />
             <input
@@ -62,7 +69,7 @@ $prayers = $db->query($sql);
                 </th>
             </tr>
             <tr>
-                <th>🤲</th>
+                <th>⛪</th>
                 <th>Name</th>
                 <th>County</th>
                 <th>Date</th>
