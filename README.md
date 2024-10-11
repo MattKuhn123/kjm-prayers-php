@@ -12,6 +12,11 @@
 
 ### how to run locally
 
+1. uncomment *(delete the semicolon)* `extension=mysqli` in `php.ini`
+1. set the properties under `[MySQLi]`
+    1. mysqli.default_host =localhost
+    1. mysqli.default_user =....
+    1. mysqli.default_pw =........
 1. execute `php -S localhost:8000`
 
 ### recommended vs code extensions
@@ -53,6 +58,11 @@
         DirectoryIndex index.php index.html
     </IfModule>
     ```
+1. uncomment *(delete the semicolon)* `extension=mysqli` in `php.ini`
+1. set the properties under `[MySQLi]`
+    1. mysqli.default_host =localhost
+    1. mysqli.default_user =....
+    1. mysqli.default_pw =........
 
 ### how to deploy to server
 

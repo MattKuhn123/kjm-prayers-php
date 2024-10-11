@@ -1,3 +1,7 @@
+<?php
+include("db.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,12 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // …
 }
 
-$prayers = array(
-    array("first_name" => "Matt", "last_name" => "Kuhn", "county" => "Kenton", "date" => date_create("2024-01-20")),
-    array("first_name" => "Joe", "last_name" => "Smith", "county" => "Campbell", "date" => date_create("2024-01-22")),
-    array("first_name" => "Ricky", "last_name" => "Sanchez", "county" => "Boone", "date" => date_create("2024-01-24")),
-    array("first_name" => "Bobby", "last_name" => "Rodriguez", "county" => "Grant", "date" => date_create("2024-01-26")),
-);
+$sql = "SELECT * FROM `kjm`.`prayers` WHERE 1=1"; 
+$prayers = $db->query($sql);
 ?>
 
 <body>
@@ -47,9 +47,9 @@ $prayers = array(
             <textarea required id="prayer-text" name="prayer-text" rows="5"></textarea>
 
             <input type="submit" class="btn btn-primary" />
-            <input 
+            <input
                 value="Cancel"
-                onclick="document.getElementsByTagName('dialog')[0].close()" 
+                onclick="document.getElementsByTagName('dialog')[0].close()"
                 class="btn btn-secondary" />
         </form>
     </dialog>
@@ -74,10 +74,10 @@ $prayers = array(
                     <td rowspan="2">🙏</td>
                     <td><?= htmlspecialchars($prayer["first_name"] . " " . $prayer["last_name"]) ?></td>
                     <td><?= htmlspecialchars($prayer["county"]) ?></td>
-                    <td><?= date_format($prayer["date"], "Y/m/d") ?></td>
+                    <td><time datetime="<?= $prayer["date"] ?>"><?= $prayer["date"] ?></time></td>
                 </tr>
                 <tr>
-                    <td colspan="3">This is my prayer, This is my prayer, This is my prayer, This is my prayer!!!!</td>
+                    <td colspan="3"><?= htmlspecialchars($prayer["prayer"]) ?></td>
                 </tr>
             <?php endforeach ?>
         </tbody>
