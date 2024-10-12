@@ -2,9 +2,29 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.tab-content {
+    display: none;
+}
+
+.tab-content:target {
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    background-color: #f9831b;
+    padding: 5px;
+}
+
 table#prayer-table {
-    max-width: fit-content;
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, .2), 0px 2px 2px 0px rgba(0, 0, 0, .14), 0px 1px 5px 0px rgba(0, 0, 0, .12);
+    margin: 5px;
+    padding: 5px;
+    border: solid black;
+    border-radius: 5px;
 }
 
 table#prayer-table tfoot tr th input {
@@ -40,11 +60,14 @@ textarea:read-only {
 form#prayer-form {
     margin: 5px;
     padding: 5px;
+    border: solid black;
+    border-radius: 5px;
 }
 
 form#prayer-form input,
 form#prayer-form select,
 form#prayer-form textarea,
+form#prayer-form button,
 form#prayer-image-form input {
     display: block;
     margin-bottom: 10px;
@@ -63,7 +86,14 @@ form#prayer-image-form input {
     padding: 15px;
 }
 
-.btn-input {
+.btn-med {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.btn-slim {
     padding-top: 5px;
     padding-bottom: 5px;
     width: 14em; /* 20 - "Submit".length, trying to match default input width */
@@ -77,4 +107,9 @@ form#prayer-image-form input {
 .btn-secondary {
     color: black;
     background-color: rgb(220 220 220);
+}
+
+.btn-link {
+    color: #f9831b;
+    background-color: white;
 }

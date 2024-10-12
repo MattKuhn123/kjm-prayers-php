@@ -22,11 +22,22 @@ $options = [
         "method" => "POST",
         "content" => json_encode($data),
     ],
+    // TODO : SSL
+    'ssl' => array(
+        'verify_peer' => false,
+    )
 ];
 
-$context = stream_context_create($options);
-$result = file_get_contents($url, false, $context);
-$json = json_decode($result);
+$text = "";
+try {
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    $json = json_decode($result);
+    $text = $json->responses[0]->fullTextAnnotation->text;
+} catch (Exception $e) {
+    $text = "error";
+}
+
 ?>
 
-<textarea><?= $json->responses[0]->fullTextAnnotation->text ?></textarea>
+<textarea required id="prayer" name="prayer" rows="6" rows="6"><?= $text ?></textarea>
