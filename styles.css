@@ -36,6 +36,12 @@ table#prayer-table thead tr th {
     border-bottom: 1px solid rgb(140 140 140);
 }
 
+table#prayer-table tbody tr td:not(:first-child) {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
 /* prayer */
 table#prayer-table tbody tr:nth-child(even) td:first-child {
     padding: 10px;
