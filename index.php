@@ -110,7 +110,7 @@ $db->close();
             <tbody>
                 <?php foreach ($prayers as $prayer): ?>
                     <tr>
-                        <td rowspan="2"><input value="🙏" type="submit" form="query-prayer-form" /></td>
+                        <td rowspan="2"><input value="🙏" type="button" /></td>
                         <td><?= htmlspecialchars($prayer["first_name"] . " " . $prayer["last_name"]) ?></td>
                         <td><?= htmlspecialchars($prayer["county"]) ?></td>
                         <td><time datetime="<?= $prayer["date"] ?>"><?= $prayer["date"] ?></time></td>
