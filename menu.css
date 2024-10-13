@@ -1,0 +1,17 @@
+.tab-content {
+    display: none;
+}
+
+.tab-content:target {
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    background-color: #f9831b;
+    padding: 5px;
+}
