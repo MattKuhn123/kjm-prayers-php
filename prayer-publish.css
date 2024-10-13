@@ -1,0 +1,15 @@
+form#prayer-form {
+    margin: 5px;
+    padding: 5px;
+    border: solid black;
+    border-radius: 5px;
+}
+
+form#prayer-form input,
+form#prayer-form select,
+form#prayer-form textarea,
+form#prayer-form button,
+form#prayer-image-form input {
+    display: block;
+    margin-bottom: 10px;
+}

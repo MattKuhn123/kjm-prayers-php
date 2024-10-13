@@ -43,7 +43,7 @@ $pages = ceil($count / $page_length);
 
 $db->close();
 ?>
-
+<link rel="stylesheet" href="/pray.css">
 <form id="query-prayer-form" hx-get="/pray.php">
     <table id="prayer-table">
         <thead>

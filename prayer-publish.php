@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
-
+<link rel="stylesheet" href="/prayer-publish.css">
 <?php if ($_SERVER["REQUEST_METHOD"] === "GET"): ?>
     <form id="prayer-form" hx-post="/prayer-publish.php" hx-target="#result">
         <label for="first-name">First Name</label>

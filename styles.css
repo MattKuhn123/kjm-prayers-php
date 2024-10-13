@@ -20,65 +20,6 @@ body {
     padding: 5px;
 }
 
-table#prayer-table {
-    margin: 5px;
-    padding: 5px;
-    border: solid black;
-    border-radius: 5px;
-}
-
-table#prayer-table tfoot tr th input {
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-}
-
-table#prayer-table thead tr th {
-    border-bottom: 1px solid rgb(140 140 140);
-}
-
-table#prayer-table tbody tr td:not(:first-child) {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: center;
-}
-
-/* prayer */
-table#prayer-table tbody tr:nth-child(even) td:first-child {
-    padding: 10px;
-}
-
-table#prayer-table thead tr,
-table#prayer-table tfoot tr,
-table#prayer-table tbody tr:nth-child(odd) {
-    background-color: rgb(220 220 220);
-}
-
-table#prayer-table tbody tr:hover {
-    background-color: #f9831b;
-}
-
-input[type='text']:read-only,
-textarea:read-only {
-    font-style: italic;
-    background-color: rgb(220 220 220);
-}
-
-form#prayer-form {
-    margin: 5px;
-    padding: 5px;
-    border: solid black;
-    border-radius: 5px;
-}
-
-form#prayer-form input,
-form#prayer-form select,
-form#prayer-form textarea,
-form#prayer-form button,
-form#prayer-image-form input {
-    display: block;
-    margin-bottom: 10px;
-}
-
 .btn {
     text-align: center;
     display: inline-block;
