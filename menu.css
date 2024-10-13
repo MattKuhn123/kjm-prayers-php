@@ -1,17 +1,26 @@
-.tab-content {
-    display: none;
-}
-
-.tab-content:target {
-    display: flex;
-    justify-content: center;
-}
-
 .menu {
     list-style-type: none;
     display: flex;
     justify-content: space-around;
-    align-items: baseline;
+    align-items: center;
     background-color: #f9831b;
-    padding: 5px;
+    padding: 1vh;
+    flex-direction: column;
+    height: 90vh;
+}
+
+.menu-item {
+    font-size: 4vh;
+    text-align: center;
+    align-content: center;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid rgb(140 140 140);
+    border-radius: 5vh;
+    text-decoration: none;
+    color: black;
+    background-color: whitesmoke;
+    width: 50vw;
+    height: 25vh;
+    box-shadow: 3px 3px 3px grey;
 }
