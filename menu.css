@@ -3,10 +3,9 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #f9831b;
-    padding: 1vh;
     flex-direction: column;
-    height: 90vh;
+    background-color: #f9831b;
+    height: 100%;
 }
 
 .menu-item {

@@ -11,11 +11,12 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/styles.css">
 </head>
-
 <body>
-    <div id="menu" hx-get="/menu.php" hx-trigger="load">
+    <div id="replace-me" hx-get="/menu.php" hx-trigger="load" hx-swap="outerHTML">
         <p class="htmx-indicator">Result loading...</p>
     </div>
+    <footer>
+        
+    </footer>
 </body>
-
 </html>
