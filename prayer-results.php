@@ -56,10 +56,6 @@ $pages = ceil($count / $page_length);
 $db->close();
 ?>
 <div id="prayer-results">
-    <script type="text/javascript">
-        document.location.hash = "";
-    </script>
-
     <?php if ($prayers->num_rows == 0): ?>
         <div class="no-results">
             <p>We couldn't find the prayer you were looking for!</p>
