@@ -34,7 +34,7 @@ body {
     }
 }
 
-#prayer-form {
+#prayer-publish {
     margin: 5px;
     padding: 5px;
     border: solid black;
@@ -49,7 +49,7 @@ body {
     }
 }
 
-#prayer-table {
+#prayer-results {
     margin: 5px;
     padding: 5px;
     border: solid black;
