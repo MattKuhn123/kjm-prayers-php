@@ -1,7 +1,7 @@
-<form hx-get="/prayer-results.php" id="prayer-search">
+<form hx-get="/prayer-results.php" id="prayer-search" hx-swap="outerHTML">
     <fieldset id="fieldset-query-start">
         <label for="query-start">Would you like to see the latest prayers? Or are you looking for something specific?</label>
-        <input class="btn btn-primary btn-fat" type="submit" value="Take me to the latest prayers!"/>
+        <input class="btn btn-primary btn-fat" type="submit" value="Take me to the latest prayers!" />
         <a href="#fieldset-query-name" class="btn btn-primary btn-fat">I'm looking for something specific.</a>
     </fieldset>
 
@@ -30,10 +30,8 @@
         <input value="<?= !empty($_GET["query-date-end"]) ? $_GET["query-date-end"] : "" ?>" id="query-date-end" name="query-date-end" type="date" />
         <input class="btn btn-primary btn-fat" type="submit" value="Search" />
     </fieldset>
-</form>
 
-<script type="text/javascript">
-    if (document.location.hash == "" || document.location.hash == "#") {
+    <script type="text/javascript">
         document.location.hash = "#fieldset-query-start";
-    }
-</script>
+    </script>
+</form>

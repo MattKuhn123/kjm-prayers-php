@@ -1,6 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     height: 98vh;
+    background-color: orange;
 }
 
 #menu {
@@ -9,7 +10,6 @@ body {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    background-color: #f9831b;
     height: 100%;
 
     & li a {
@@ -25,7 +25,6 @@ body {
         background-color: whitesmoke;
         width: 50vw;
         height: 25vh;
-        box-shadow: 3px 3px 3px grey;
     }
 }
 
@@ -51,7 +50,6 @@ body {
         background-color: whitesmoke;
         width: 50vw;
         height: 50vh;
-        box-shadow: 3px 3px 3px grey;
         border: none;
     }
 
@@ -77,38 +75,67 @@ body {
 }
 
 #prayer-results {
-    border: solid black;
-    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3vh;
 
-    & tfoot tr th input {
-
-        margin-block-start: 1em;
-        margin-block-end: 1em;
+    & table {
+        width: 75vw;
+        padding: 1vh;
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
     }
 
-    & thead tr th {
-        border-bottom: 1px solid rgb(140 140 140);
+    & thead,
+    & tfoot {
+        font-size: 2vh;
     }
 
-    & tbody tr td:not(:first-child) {
-        padding-top: 5px;
-        padding-bottom: 5px;
+    & tbody {
+        font-size: 3vh;
+    }
+
+    & table:nth-child(even) {
+        background-color: whitesmoke;
+    }
+
+    & table:nth-child(odd) {
+        background-color: whitesmoke;
+    }
+
+    & .right {
+        text-align: right;
+    }
+
+    & .finished{
+        font-size: 4vh;
         text-align: center;
+        align-content: center;
+        display: inline-block;
+        cursor: pointer;
+        border: 1px solid rgb(140 140 140);
+        border-radius: 5vh;
+        text-decoration: none;
+        color: black;
+        background-color: whitesmoke;
+        width: 50vw;
+        padding: 3vh;
     }
 
-    /* prayer */
-    & tbody tr:nth-child(even) td:first-child {
-        padding: 10px;
-    }
-
-    & thead tr,
-    & tfoot tr,
-    & tbody tr:nth-child(odd) {
-        background-color: rgb(220 220 220);
-    }
-
-    & tbody tr:hover {
-        background-color: #f9831b;
+    & .no-results {
+        display: flex;
+        flex-direction: column;
+        gap: 3vh;
+        padding: 5vh;
+        font-size: 4vh;
+        background-color: whitesmoke;
+        width: 50vw;
+        border: none;
     }
 }
 
@@ -141,7 +168,7 @@ body {
 
 .btn-primary {
     color: black;
-    background-color: #f9831b;
+    background-color: orange;
 }
 
 .btn-secondary {
@@ -150,6 +177,6 @@ body {
 }
 
 .btn-link {
-    color: #f9831b;
+    color: orange;
     background-color: white;
 }
