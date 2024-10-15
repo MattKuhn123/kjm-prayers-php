@@ -55,7 +55,9 @@ body {
         border: none;
     }
 
-    & fieldset input {
+    & fieldset input,
+    & fieldset select,
+    & fieldset a {
         font-size: 4vh;
         padding: 3vh;
     }
@@ -115,7 +117,7 @@ body {
     display: inline-block;
     cursor: pointer;
     border: 1px solid rgb(140 140 140);
-    border-radius: 5px;
+    border-radius: 15px;
     text-decoration: none;
 }
 
