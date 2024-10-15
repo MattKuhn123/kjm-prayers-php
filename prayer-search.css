@@ -16,7 +16,7 @@
     }
 
     & fieldset {
-        font-size: 4vh;
+        font-size: 4vmin;
         background-color: whitesmoke;
         width: 50vw;
         height: 50vh;
@@ -26,7 +26,7 @@
     & fieldset input,
     & fieldset select,
     & fieldset a {
-        font-size: 4vh;
-        padding: 3vh;
+        font-size: 4vmin;
+        padding: 3vmin;
     }
 }

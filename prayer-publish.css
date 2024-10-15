@@ -10,7 +10,7 @@
         flex-direction: column;
         justify-content: space-around;
         gap: 5px;
-        font-size: 4vh;
+        font-size: 4vmin;
         background-color: whitesmoke;
         width: 50vw;
     }
@@ -19,7 +19,7 @@
     & fieldset select,
     & fieldset textarea,
     & fieldset a {
-        font-size: 4vh;
-        padding: 3vh;
+        font-size: 4vmin;
+        padding: 3vmin;
     }
 }

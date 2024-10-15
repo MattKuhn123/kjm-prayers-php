@@ -7,7 +7,7 @@
     height: 100%;
 
     & a {
-        font-size: 4vh;
+        font-size: 4vmin;
         text-align: center;
         align-content: center;
         display: inline-block;
