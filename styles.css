@@ -49,7 +49,7 @@ body {
     }
 }
 
-prayer-table {
+#prayer-table {
     margin: 5px;
     padding: 5px;
     border: solid black;
@@ -86,9 +86,6 @@ prayer-table {
         background-color: #f9831b;
     }
 }
-
-
-
 
 .btn {
     text-align: center;
