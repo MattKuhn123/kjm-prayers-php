@@ -22,4 +22,8 @@
         font-size: 4vmin;
         padding: 3vmin;
     }
+
+    & .centered {
+        align-items: center;
+    }
 }
