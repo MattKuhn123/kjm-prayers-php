@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 3vh;
+    gap: 3vmin;
 
     & table {
         width: 75vw;
@@ -17,11 +17,11 @@
 
     & thead,
     & tfoot {
-        font-size: 2vmin;
+        font-size: 3vmin;
     }
 
     & tbody {
-        font-size: 3vmin;
+        font-size: 4vmin;
     }
 
     & table:nth-child(even) {
@@ -59,6 +59,5 @@
         font-size: 4vmin;
         background-color: whitesmoke;
         width: 50vw;
-        border: none;
     }
 }
