@@ -1,23 +1,23 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    try {
-        $db = mysqli_connect();
-        $first_name = trim($_POST["first-name"]);
-        $last_name = trim($_POST["last-name"]);
-        $county = trim($_POST["county"]);
-        $date = trim($_POST["date"]);
-        $prayer = trim($_POST["prayer"]);
-    
-        $stmt = $db->prepare("INSERT INTO `kjm`.`prayers` (first_name, last_name, county, date, prayer) VALUES (?, ?, ?, STR_TO_DATE(?, '%Y-%m-%d'), ?)");
-        $stmt->bind_param("sssss", $first_name, $last_name, $county, $date, $prayer);
-        $stmt->execute();
-        $stmt->close();
-        $db->close();
-        echo("Published prayer!");
-    } catch (Exception $e) {
-        echo("Error!");
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        try {
+            $db = mysqli_connect();
+            $first_name = trim($_POST["first-name"]);
+            $last_name = trim($_POST["last-name"]);
+            $county = trim($_POST["county"]);
+            $date = trim($_POST["date"]);
+            $prayer = trim($_POST["prayer"]);
+        
+            $stmt = $db->prepare("INSERT INTO `kjm`.`prayers` (first_name, last_name, county, date, prayer) VALUES (?, ?, ?, STR_TO_DATE(?, '%Y-%m-%d'), ?)");
+            $stmt->bind_param("sssss", $first_name, $last_name, $county, $date, $prayer);
+            $stmt->execute();
+            $stmt->close();
+            $db->close();
+            echo("Published prayer!");
+        } catch (Exception $e) {
+            echo("Error!");
+        }
     }
-}
 ?>
 <link rel="stylesheet" href="/prayer-publish.css">
 <?php if ($_SERVER["REQUEST_METHOD"] === "GET"): ?>
