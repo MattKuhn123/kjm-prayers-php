@@ -1,23 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Prayer Board</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/prayer-publish.css">
+</head>
+
 <?php
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        try {
-            $db = mysqli_connect();
-            $first_name = trim($_POST["first-name"]);
-            $last_name = trim($_POST["last-name"]);
-            $county = trim($_POST["county"]);
-            $date = trim($_POST["date"]);
-            $prayer = trim($_POST["prayer"]);
-        
-            $stmt = $db->prepare("INSERT INTO `kjm`.`prayers` (first_name, last_name, county, date, prayer) VALUES (?, ?, ?, STR_TO_DATE(?, '%Y-%m-%d'), ?)");
-            $stmt->bind_param("sssss", $first_name, $last_name, $county, $date, $prayer);
-            $stmt->execute();
-            $stmt->close();
-            $db->close();
-            echo("Published prayer!");
-        } catch (Exception $e) {
-            echo("Error!");
-        }
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    try {
+        $db = mysqli_connect();
+        $first_name = trim($_POST["first-name"]);
+        $last_name = trim($_POST["last-name"]);
+        $county = trim($_POST["county"]);
+        $date = trim($_POST["date"]);
+        $prayer = trim($_POST["prayer"]);
+
+        $stmt = $db->prepare("INSERT INTO `kjm`.`prayers` (first_name, last_name, county, date, prayer) VALUES (?, ?, ?, STR_TO_DATE(?, '%Y-%m-%d'), ?)");
+        $stmt->bind_param("sssss", $first_name, $last_name, $county, $date, $prayer);
+        $stmt->execute();
+        $stmt->close();
+        $db->close();
+        echo ("Published prayer!");
+    } catch (Exception $e) {
+        echo ("Error!");
     }
+}
 ?>
 <?php if ($_SERVER["REQUEST_METHOD"] === "GET"): ?>
     <form id="prayer-publish" hx-post="/prayer-publish.php" hx-target="#result">
@@ -47,3 +59,5 @@
     </form>
     <span id="result"></span>
 <?php endif ?>
+
+</html>

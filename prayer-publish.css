@@ -1,0 +1,12 @@
+#prayer-publish {
+    border: solid black;
+    border-radius: 5px;
+
+    & input,
+    & select,
+    & textarea,
+    & button {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
