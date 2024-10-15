@@ -10,42 +10,44 @@
     <link rel="stylesheet" href="/prayer-search.css">
 </head>
 
-<form action="/prayer-results.php" id="prayer-search" method="GET">
-    <fieldset id="fieldset-query-start">
-        <label for="query-start">Would you like to see the latest prayers? Or are you looking for something specific?</label>
-        <input class="btn btn-primary btn-fat" type="submit" value="Take me to the latest prayers!" />
-        <a href="#fieldset-query-name" class="btn btn-primary btn-fat">I'm looking for something specific.</a>
-    </fieldset>
+<body>
+    <form action="/prayer-results.php" id="prayer-search" method="GET">
+        <fieldset id="fieldset-query-start">
+            <label for="query-start">Would you like to see the latest prayers? Or are you looking for something specific?</label>
+            <input class="btn btn-primary btn-fat" type="submit" value="Take me to the latest prayers!" />
+            <a href="#fieldset-query-name" class="btn btn-primary btn-fat">I'm looking for something specific.</a>
+        </fieldset>
 
-    <fieldset id="fieldset-query-name">
-        <label for="query-name">Is there a person you'd like to pray for?</label>
-        <input id="query-name" name="query-name" type="search" placeholder="Name" />
-        <a href="#fieldset-query-county" class="btn btn-primary btn-fat">Continue</a>
-    </fieldset>
+        <fieldset id="fieldset-query-name">
+            <label for="query-name">Is there a person you'd like to pray for?</label>
+            <input id="query-name" name="query-name" type="search" placeholder="Name" />
+            <a href="#fieldset-query-county" class="btn btn-primary btn-fat">Continue</a>
+        </fieldset>
 
-    <fieldset id="fieldset-query-county">
-        <label for="query-county">Is there a county you'd like to pray for?</label>
-        <select id="query-county" name="query-county">
-            <option></option>
-            <option>Boone</option>
-            <option>Campbell</option>
-            <option>Kenton</option>
-            <option>Grant</option>
-        </select>
-        <a href="#fieldset-query-date-start" class="btn btn-primary btn-fat">Continue</a>
-    </fieldset>
+        <fieldset id="fieldset-query-county">
+            <label for="query-county">Is there a county you'd like to pray for?</label>
+            <select id="query-county" name="query-county">
+                <option></option>
+                <option>Boone</option>
+                <option>Campbell</option>
+                <option>Kenton</option>
+                <option>Grant</option>
+            </select>
+            <a href="#fieldset-query-date-start" class="btn btn-primary btn-fat">Continue</a>
+        </fieldset>
 
-    <fieldset id="fieldset-query-date-start">
-        <label for="query-date-start">Are there prayers that were published in a certain time frame that you'd like to pray for?</label>
-        <input id="query-date-start" name="query-date-start" type="date" value="<?php echo date('Y-m-d', strtotime('-31 days')); ?>" />
-        -
-        <input id="query-date-end" name="query-date-end" type="date" value="<?php echo date('Y-m-d'); ?>" />
-        <input class="btn btn-primary btn-fat" type="submit" value="Search" />
-    </fieldset>
+        <fieldset id="fieldset-query-date-start">
+            <label for="query-date-start">Are there prayers that were published in a certain time frame that you'd like to pray for?</label>
+            <input id="query-date-start" name="query-date-start" type="date" value="<?php echo date('Y-m-d', strtotime('-31 days')); ?>" />
+            -
+            <input id="query-date-end" name="query-date-end" type="date" value="<?php echo date('Y-m-d'); ?>" />
+            <input class="btn btn-primary btn-fat" type="submit" value="Search" />
+        </fieldset>
 
-    <script type="text/javascript">
-        document.location.hash = "#fieldset-query-start";
-    </script>
-</form>
+        <script type="text/javascript">
+            document.location.hash = "#fieldset-query-start";
+        </script>
+    </form>
+</body>
 
 </html>

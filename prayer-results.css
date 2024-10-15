@@ -1,63 +1,61 @@
-#prayer-results {
-    width: 100%;
-    height: 100%;
+body {
     overflow-y: scroll;
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 3vmin;
+}
 
-    & table {
-        width: 75vw;
-        padding: 1vmin;
-        border-color: black;
-        border-style: solid;
-        border-width: 1px;
-    }
+table {
+    width: 75vw;
+    padding: 1vmin;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
 
-    & thead,
-    & tfoot {
-        font-size: 3vmin;
-    }
+thead,
+tfoot {
+    font-size: 3vmin;
+}
 
-    & tbody {
-        font-size: 4vmin;
-    }
+tbody {
+    font-size: 4vmin;
+}
 
-    & table:nth-child(even) {
-        background-color: whitesmoke;
-    }
+table:nth-child(even) {
+    background-color: whitesmoke;
+}
 
-    & table:nth-child(odd) {
-        background-color: whitesmoke;
-    }
+table:nth-child(odd) {
+    background-color: whitesmoke;
+}
 
-    & .right {
-        text-align: right;
-    }
+.right {
+    text-align: right;
+}
 
-    & .finished{
-        font-size: 4vmin;
-        text-align: center;
-        align-content: center;
-        display: inline-block;
-        cursor: pointer;
-        border: 1px solid rgb(140 140 140);
-        border-radius: 5vmin;
-        text-decoration: none;
-        color: black;
-        background-color: whitesmoke;
-        width: 50vw;
-        padding: 3vmin;
-    }
+.finished{
+    font-size: 4vmin;
+    text-align: center;
+    align-content: center;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid rgb(140 140 140);
+    border-radius: 5vmin;
+    text-decoration: none;
+    color: black;
+    background-color: whitesmoke;
+    width: 75vw;
+    padding: 3vmin;
+}
 
-    & .no-results {
-        display: flex;
-        flex-direction: column;
-        gap: 3vh;
-        padding: 5vmin;
-        font-size: 4vmin;
-        background-color: whitesmoke;
-        width: 50vw;
-    }
+.no-results {
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    padding: 5vmin;
+    font-size: 4vmin;
+    background-color: whitesmoke;
+    width: 50vw;
 }

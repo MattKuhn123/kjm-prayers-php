@@ -1,28 +1,28 @@
-#prayer-publish {
+body{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5vh;
+}
 
-    & fieldset {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        gap: 5px;
-        font-size: 4vmin;
-        background-color: whitesmoke;
-        width: 50vw;
-    }
+fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+    font-size: 4vmin;
+    background-color: whitesmoke;
+    width: 50vw;
+}
 
-    & fieldset input,
-    & fieldset select,
-    & fieldset textarea,
-    & fieldset a {
-        font-size: 4vmin;
-        padding: 3vmin;
-    }
+fieldset input,
+fieldset select,
+fieldset textarea,
+fieldset a {
+    font-size: 4vmin;
+    padding: 3vmin;
+}
 
-    & .centered {
-        align-items: center;
-    }
+.centered {
+    align-items: center;
 }

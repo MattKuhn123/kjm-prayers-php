@@ -1,31 +1,29 @@
-#prayer-search {
-    width: 100%;
-    height: 100%;
+body {
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
 
-    & fieldset:not(fieldset:target) {
-        display: none;
-    }
+fieldset:not(fieldset:target) {
+    display: none;
+}
 
-    & fieldset:target {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
+fieldset:target {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 
-    & fieldset {
-        font-size: 4vmin;
-        background-color: whitesmoke;
-        width: 50vw;
-        height: 50vh;
-    }
+fieldset {
+    font-size: 4vmin;
+    background-color: whitesmoke;
+    width: 50vw;
+    height: 50vh;
+}
 
-    & fieldset input,
-    & fieldset select,
-    & fieldset a {
-        font-size: 4vmin;
-        padding: 3vmin;
-    }
+fieldset input,
+fieldset select,
+fieldset a {
+    font-size: 4vmin;
+    padding: 3vmin;
 }
