@@ -11,10 +11,10 @@
 </head>
 
 <body>
-    <ul id="menu">
-        <li><a href="/prayer-search.php">Pray</a></li>
-        <li><a href="/prayer-publish.php">Publish</a></li>
-    </ul>
+    <div id="menu">
+        <a href="/prayer-search.php">Pray</a>
+        <a href="/prayer-publish.php">Publish</a>
+    </div>
 </body>
 
 </html>

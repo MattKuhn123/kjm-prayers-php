@@ -6,7 +6,7 @@
     flex-direction: column;
     height: 100%;
 
-    & li a {
+    & a {
         font-size: 4vh;
         text-align: center;
         align-content: center;

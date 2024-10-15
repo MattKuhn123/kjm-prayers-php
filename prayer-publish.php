@@ -32,8 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
-<?php if ($_SERVER["REQUEST_METHOD"] === "GET"): ?>
-    <form id="prayer-publish" hx-post="/prayer-publish.php" hx-target="#result">
+<form id="prayer-publish" action="/prayer-publish.php" method="POST">
+    <fieldset>
         <label for="first-name">First Name</label>
         <input required id="first-name" name="first-name" type="text" />
         <label for="last-name">Last Name</label>
@@ -47,17 +47,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </select>
         <label for="date">Date</label>
         <input required id="date" name="date" type="date" />
-        <label for="file">Convert image to text</label>
+    </fieldset>
+    
+    <fieldset>
+        <label for="file">If you prefer, you may take a picture of the prayer to pre-populate it below.</label>
         <input value="" type="file" id="file" name="file" class="btn btn-secondary btn-slim">
-        <button type="button" hx-encoding="multipart/form-data" hx-indicator="#loading" hx-post="/ocr.php" hx-target="#prayer" hx-swap="outerHTML" class="btn btn-secondary btn-slim">
-            Convert
+        <input value="Convert" type="button" hx-encoding="multipart/form-data" hx-indicator="#loading" hx-post="/ocr.php" hx-target="#prayer" hx-swap="outerHTML" class="btn btn-secondary btn-slim">
             <span class="htmx-indicator" id="loading">⚒ <i>(Working)</i> ⚒</span>
-        </button>
+        </input>
         <label for="prayer">Prayer</label>
         <textarea required id="prayer" name="prayer" rows="6"></textarea>
+    </fieldset>
+
+    <fieldset>
         <input type="submit" class="btn btn-primary btn-slim" />
-        <input value="Cancel" onclick="document.getElementById('prayer-dialog').close()" class="btn btn-secondary btn-slim" />
-    </form>
+        <a href="/index.php" class="btn btn-secondary btn-slim">Cancel</a>
+    </fieldset>
+</form>
+
+<?php if ($_SERVER["REQUEST_METHOD"] === "POST"): ?>
     <span id="result"></span>
 <?php endif ?>
 

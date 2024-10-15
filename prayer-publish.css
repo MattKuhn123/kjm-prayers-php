@@ -1,12 +1,25 @@
 #prayer-publish {
-    border: solid black;
-    border-radius: 5px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
 
-    & input,
-    & select,
-    & textarea,
-    & button {
-        display: block;
-        margin-bottom: 10px;
+    & fieldset {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 5px;
+        font-size: 4vh;
+        background-color: whitesmoke;
+        width: 50vw;
+    }
+
+    & fieldset input,
+    & fieldset select,
+    & fieldset textarea,
+    & fieldset a {
+        font-size: 4vh;
+        padding: 3vh;
     }
 }
