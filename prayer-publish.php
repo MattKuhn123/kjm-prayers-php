@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <option>Grant</option>
         </select>
         <label for="date">Date</label>
-        <input required id="date" name="date" type="date" />
+        <input required id="date" name="date" type="date" value="<?php echo date('Y-m-d'); ?>"/>
     </fieldset>
     
     <fieldset class="centered>

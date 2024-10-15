@@ -33,7 +33,11 @@ try {
     $context = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
     $json = json_decode($result);
-    $text = $json->responses[0]->fullTextAnnotation->text;
+    if (count($json->responses) > 0 && isset($json->responses[0]->fullTextAnnotation)) {
+        $text = $json->responses[0]->fullTextAnnotation->text;
+    } else {
+        $text = "Could not parse text from image";
+    }
 } catch (Exception $e) {
     $text = "error";
 }
