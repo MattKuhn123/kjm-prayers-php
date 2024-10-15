@@ -1,4 +1,15 @@
-<form hx-get="/prayer-results.php" id="prayer-search" hx-swap="outerHTML">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Prayer Board</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<form action="/prayer-results.php" id="prayer-search" method="GET">
     <fieldset id="fieldset-query-start">
         <label for="query-start">Would you like to see the latest prayers? Or are you looking for something specific?</label>
         <input class="btn btn-primary btn-fat" type="submit" value="Take me to the latest prayers!" />
@@ -35,3 +46,5 @@
         document.location.hash = "#fieldset-query-start";
     </script>
 </form>
+
+</html>

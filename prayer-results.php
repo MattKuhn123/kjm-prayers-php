@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Prayer Board</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
 <?php
 $db = mysqli_connect();
 
@@ -51,8 +62,8 @@ $db->close();
     <?php if ($prayers->num_rows == 0): ?>
         <div class="no-results">
             <p>We couldn't find the prayer you were looking for!</p>
-            <a hx-target="#prayer-results" hx-get="prayer-search.php" hx-swap="outerHTML" class="btn btn-primary btn-fat">Try again</a>
-            <a hx-target="#prayer-results" hx-get="menu.php" hx-swap="outerHTML" class="btn btn-secondary btn-fat">Home</a>
+            <a href="/prayer-search.php" class="btn btn-primary btn-fat">Try again</a>
+            <a href="/index.php" class="btn btn-secondary btn-fat">Home</a>
         </div>
     <?php endif ?>
 
@@ -88,6 +99,8 @@ $db->close();
             </table>
         <?php endforeach ?>
 
-        <a hx-target="#prayer-results" hx-get="menu.php" hx-swap="outerHTML" class="finished">Finished</a>
+        <a href="/index.php" class="finished">Finished</a>
     <?php endif ?>
 </div>
+
+</html>
