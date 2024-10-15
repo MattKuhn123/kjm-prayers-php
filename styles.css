@@ -35,7 +35,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    flex-direction: column;
 
     & fieldset:not(fieldset:target) {
         display: none;
@@ -45,18 +44,20 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        align-items: center;
     }
 
     & fieldset {
+        font-size: 4vh;
         background-color: whitesmoke;
-        align-content: center;
-        width: 50%;
-        height: 50%;
+        width: 50vw;
+        height: 50vh;
+        box-shadow: 3px 3px 3px grey;
+        border: none;
     }
 
     & fieldset input {
-        width: 80%
+        font-size: 4vh;
+        padding: 3vh;
     }
 }
 
