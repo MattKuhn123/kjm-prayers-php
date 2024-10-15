@@ -19,9 +19,8 @@
         }
     }
 ?>
-<link rel="stylesheet" href="/prayer-publish.css">
 <?php if ($_SERVER["REQUEST_METHOD"] === "GET"): ?>
-    <form id="prayer-form" hx-post="/prayer-publish.php" hx-target="#result">
+    <form id="prayer-publish" hx-post="/prayer-publish.php" hx-target="#result">
         <label for="first-name">First Name</label>
         <input required id="first-name" name="first-name" type="text" />
         <label for="last-name">Last Name</label>

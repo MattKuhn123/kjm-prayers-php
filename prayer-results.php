@@ -43,8 +43,7 @@
 
     $db->close();
 ?>
-<link rel="stylesheet" href="/prayer-results.css">
-<table id="prayer-table">
+<table id="prayer-results">
     <thead>
         <tr id="column-headers">
             <th></th>
@@ -69,16 +68,4 @@
             </tr>
         <?php endforeach ?>
     </tbody>
-    <tfoot>
-        <tr>
-            <th colspan="4">
-                <label for="query-page-index">Page</label>
-                <select id="query-page-index" name="query-page-index" onchange="document.getElementById('query-prayer-form').submit()">
-                    <?php for ($x = 0; $x < $pages; $x++): ?>
-                        <option value="<?= $x ?>" <?php if ($x === $page_index) echo ("selected"); ?>><?= ($x + 1) ?></option>
-                    <?php endfor ?>
-                </select>
-            </th>
-        </tr>
-    </tfoot>
 </table>

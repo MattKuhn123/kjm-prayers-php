@@ -1,5 +1,4 @@
-<link rel="stylesheet" href="/prayer-search.css">
-<form hx-get="/prayer-results.php" id="query-prayer-form">
+<form hx-get="/prayer-results.php" id="prayer-search">
     <fieldset id="fieldset-query-name">
         <label for="query-name">Do you know the name of the person who's prayers you're looking for?</label>
         <input value="<?= !empty($_GET["query-name"]) ? $_GET["query-name"] : "" ?>" id="query-name" name="query-name" type="search" />
