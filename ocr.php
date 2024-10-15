@@ -40,4 +40,4 @@ try {
 
 ?>
 
-<textarea required id="prayer" name="prayer" rows="6" rows="6"><?= $text ?></textarea>
+<?= $text ?>
