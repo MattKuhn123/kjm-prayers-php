@@ -69,6 +69,9 @@ $db->close();
 
     <?php if ($prayers->num_rows > 0): ?>
         <div class="centered gap">
+            <fieldset class="my-fieldset">
+                <p>Prayers</p>
+            </fieldset>
             <?php foreach ($prayers as $prayer): ?>
                 <fieldset class="my-fieldset">
                     <header class="smaller-text">
@@ -92,7 +95,9 @@ $db->close();
                     </section>
                 </fieldset>
             <?php endforeach ?>
-            <a href="/index.php" class="btn btn-secondary">Finished</a>
+            <fieldset class="my-fieldset">
+                <a href="/index.php" class="btn btn-primary">Finished</a>
+            </fieldset>
         </div>
     <?php endif ?>
 </body>

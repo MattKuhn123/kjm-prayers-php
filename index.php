@@ -10,9 +10,13 @@
     <link rel="stylesheet" href="/index.css">
 </head>
 
-<body class="centered actions">
-    <a class="btn btn-secondary" href="/prayer-search.php">Pray</a>
-    <a class="btn btn-secondary" href="/prayer-publish.php">Publish</a>
+<body class="centered">
+    <form class="my-form">
+        <fieldset class="my-fieldset actions">
+            <a class="btn btn-secondary" href="/prayer-search.php">Pray</a>
+            <a class="btn btn-secondary" href="/prayer-publish.php">Publish</a>
+        </fieldset>
+    </form>
 </body>
 
 </html>
