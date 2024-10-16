@@ -68,35 +68,29 @@ $db->close();
     <?php endif ?>
 
     <?php if ($prayers->num_rows > 0): ?>
-        <div class="prayer-results">
+        <div class="centered gap">
             <?php foreach ($prayers as $prayer): ?>
-                <table class="prayer-result">
-                    <thead class="smaller-text">
-                        <tr>
-                            <td><?= htmlspecialchars($prayer["first_name"]) . " " . htmlspecialchars($prayer["last_name"]) ?></td>
-                            <td class="right"><time datetime="<?= $prayer["date"] ?>"><?= $prayer["date"] ?></time></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><?= htmlspecialchars($prayer["county"]) ?></td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="2">
-                                <blockquote>
-                                    <q>
-                                        <?= htmlspecialchars($prayer["prayer"]) ?>
-                                    </q>
-                                </blockquote>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tfoot class="smaller-text">
-                        <tr>
-                            <td><button class="btn btn-secondary my-input">🙏</button></td>
-                        </tr>
-                    </tfoot>
-                </table>
+                <fieldset class="my-fieldset">
+                    <header class="smaller-text">
+                        <p>
+                            <span><?= htmlspecialchars($prayer["first_name"]) . " " . htmlspecialchars($prayer["last_name"]) ?></span>
+                            <span class="right"><time datetime="<?= $prayer["date"] ?>"><?= $prayer["date"] ?></time></span>
+                        </p>
+                        <p>
+                            <span colspan="2"><?= htmlspecialchars($prayer["county"]) ?></span>
+                        </p>
+                    </header>
+                    <blockquote>
+                        <q>
+                            <?= htmlspecialchars($prayer["prayer"]) ?>
+                        </q>
+                    </blockquote>
+                    <section class="actions">
+                        <button class="btn btn-secondary smaller-text my-input">🙏</button>
+                        <button class="btn btn-secondary smaller-text my-input">🤲</button>
+                        <button class="btn btn-secondary smaller-text my-input">💒</button>
+                    </section>
+                </fieldset>
             <?php endforeach ?>
             <a href="/index.php" class="btn btn-secondary">Finished</a>
         </div>
