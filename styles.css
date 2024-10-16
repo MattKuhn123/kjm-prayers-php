@@ -1,6 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    height: 97vh; /* I have to keep adjusting lower and lower to keep the scroll bar from appearing...? */
+    height: 97vh;
+    /* I have to keep adjusting lower and lower to keep the scroll bar from appearing...? */
     background-color: orange;
     font-size: 4vmin;
 }
@@ -33,11 +34,28 @@ body {
     font-size: 4vmin;
 }
 
+.actions {
+    display: flex;
+    gap: 5px;
+}
+
+@media (orientation:portrait) {
+    .actions {
+        flex-direction: column;
+    }
+}
+
+@media (orientation:landscape) {
+    .actions {
+        flex-direction: row;
+    }
+}
+
 .btn {
     text-align: center;
     align-content: center;
     cursor: pointer;
-    border: 1px solid rgb(140 140 140);
+    border: 1px solid gray;
     border-radius: 3vmin;
     text-decoration: none;
     width: 100%;

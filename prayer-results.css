@@ -9,9 +9,3 @@
 .right {
     float: right;
 }
-
-.actions {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-}
