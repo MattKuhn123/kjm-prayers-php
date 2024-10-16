@@ -1,4 +1,4 @@
-.my-fieldset:not(fieldset:target) {
+.my-fieldset:not(.my-fieldset:target) {
     display: none;
 }
 
