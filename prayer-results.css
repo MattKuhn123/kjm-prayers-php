@@ -1,4 +1,4 @@
-body {
+.prayer-results {
     overflow-y: scroll;
     display: flex;
     align-items: center;
@@ -6,7 +6,7 @@ body {
     gap: 3vmin;
 }
 
-table {
+.prayer-result {
     width: 75vw;
     padding: 1vmin;
     border-color: black;
@@ -15,8 +15,7 @@ table {
     background-color: white;
 }
 
-thead,
-tfoot {
+.smaller-text {
     font-size: 3vmin;
 }
 
@@ -27,22 +26,10 @@ tfoot {
 .finished {
     text-align: center;
     align-content: center;
-    display: inline-block;
-    cursor: pointer;
     border: 1px solid rgb(140 140 140);
     border-radius: 5vmin;
-    text-decoration: none;
     color: black;
     background-color: white;
     width: 75vw;
     padding: 3vmin;
-}
-
-.no-results {
-    display: flex;
-    flex-direction: column;
-    gap: 3vh;
-    padding: 5vmin;
-    background-color: white;
-    width: 50vw;
 }

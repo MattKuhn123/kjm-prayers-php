@@ -58,45 +58,48 @@ $db->close();
 
 <body>
     <?php if ($prayers->num_rows == 0): ?>
-        <div class="no-results">
-            <p>We couldn't find the prayer you were looking for!</p>
-            <a href="/prayer-search.php" class="btn btn-primary btn-fat">Try again</a>
-            <a href="/index.php" class="btn btn-secondary btn-fat">Home</a>
-        </div>
+        <form class="centered my-form">
+            <fieldset class="my-fieldset">
+                <p>We couldn't find the prayer you were looking for!</p>
+                <a href="/prayer-search.php" class="btn btn-primary btn-fat">Try again</a>
+                <a href="/index.php" class="btn btn-secondary btn-fat">Home</a>
+            </fieldset>
+        </form>
     <?php endif ?>
 
     <?php if ($prayers->num_rows > 0): ?>
-        <?php foreach ($prayers as $prayer): ?>
-            <table>
-                <thead>
-                    <tr>
-                        <td colspan="2"><?= htmlspecialchars($prayer["first_name"]) . " " . htmlspecialchars($prayer["last_name"]) ?></td>
-                    </tr>
-                    <tr>
-                        <td><?= htmlspecialchars($prayer["county"]) ?></td>
-                        <td class="right"><time datetime="<?= $prayer["date"] ?>"><?= $prayer["date"] ?></time></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="2">
-                            <blockquote>
-                                <q>
-                                    <?= htmlspecialchars($prayer["prayer"]) ?>
-                                </q>
-                            </blockquote>
-                        </td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td><button class="btn-fat">🙏</button></td>
-                    </tr>
-                </tfoot>
-            </table>
-        <?php endforeach ?>
-
-        <a href="/index.php" class="finished">Finished</a>
+        <div class="prayer-results">
+            <?php foreach ($prayers as $prayer): ?>
+                <table class="prayer-result">
+                    <thead class="smaller-text">
+                        <tr>
+                            <td colspan="2"><?= htmlspecialchars($prayer["first_name"]) . " " . htmlspecialchars($prayer["last_name"]) ?></td>
+                        </tr>
+                        <tr>
+                            <td><?= htmlspecialchars($prayer["county"]) ?></td>
+                            <td class="right"><time datetime="<?= $prayer["date"] ?>"><?= $prayer["date"] ?></time></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <blockquote>
+                                    <q>
+                                        <?= htmlspecialchars($prayer["prayer"]) ?>
+                                    </q>
+                                </blockquote>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot class="smaller-text">
+                        <tr>
+                            <td><button class="btn-fat">🙏</button></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            <?php endforeach ?>
+            <a href="/index.php" class="finished">Finished</a>
+        </div>
     <?php endif ?>
 </body>
 

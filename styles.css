@@ -5,24 +5,43 @@ body {
     font-size: 4vmin;
 }
 
+.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.my-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vmin;
+}
+
+.my-fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 5px;
+    background-color: white;
+    width: 75vw;
+}
+
+.my-input {
+    padding: 3vmin;
+}
+
 .btn {
     text-align: center;
     display: inline-block;
     cursor: pointer;
     border: 1px solid rgb(140 140 140);
-    border-radius: 15px;
+    border-radius: 3vmin;
     text-decoration: none;
-}
-
-.btn-fat {
-    padding: 15px;
-}
-
-.btn-slim {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    width: 14em;
-    /* 20 - "Submit".length, trying to match default input width */
+    width: 100%;
+    padding-top: 5vmin;
+    padding-bottom: 5vmin;
 }
 
 .btn-primary {

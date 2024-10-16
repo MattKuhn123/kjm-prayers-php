@@ -1,27 +1,9 @@
-body {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-fieldset:not(fieldset:target) {
+.my-fieldset:not(fieldset:target) {
     display: none;
 }
 
-fieldset:target {
+.my-fieldset:target {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-}
-
-fieldset {
-    background-color: white;
-    width: 50vw;
-    height: 50vh;
-}
-
-fieldset input,
-fieldset select,
-fieldset a {
-    padding: 3vmin;
 }

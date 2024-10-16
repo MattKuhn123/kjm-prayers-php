@@ -34,36 +34,36 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 
 <body>
-    <form id="prayer-publish" action="/prayer-publish.php" method="POST">
-        <fieldset>
+    <form class="my-form" id="prayer-publish" action="/prayer-publish.php" method="POST">
+        <fieldset class="my-fieldset">
             <label for="first-name">First Name</label>
-            <input required id="first-name" name="first-name" type="text" />
+            <input class="my-input" required id="first-name" name="first-name" type="text" />
             <label for="last-name">Last Name</label>
-            <input required id="last-name" name="last-name" type="text" />
+            <input class="my-input" required id="last-name" name="last-name" type="text" />
             <label for="county">County</label>
-            <select id="county" name="county">
+            <select class="my-input" id="county" name="county">
                 <option>Boone</option>
                 <option>Campbell</option>
                 <option>Kenton</option>
                 <option>Grant</option>
             </select>
             <label for="date">Date</label>
-            <input required id="date" name="date" type="date" value="<?php echo date('Y-m-d'); ?>" />
+            <input class="my-input" required id="date" name="date" type="date" value="<?php echo date('Y-m-d'); ?>" />
         </fieldset>
 
-        <fieldset class="centered">
-        <label for=" file">You may take a picture of the prayer to pre-populate it below.</label>
-            <input value="" type="file" id="file" name="file" class="btn btn-secondary btn-slim">
-            <input value="Convert" type="button" hx-encoding="multipart/form-data" hx-indicator="#loading" hx-post="/ocr.php" hx-target="#prayer" hx-swap="textContent" class="btn btn-secondary btn-slim">
+        <fieldset class="my-fieldset centered">
+            <label for=" file">You may take a picture of the prayer to pre-populate it below.</label>
+            <input value="" type="file" id="file" name="file" class="btn btn-secondary">
+            <input value="Convert" type="button" hx-encoding="multipart/form-data" hx-indicator="#loading" hx-post="/ocr.php" hx-target="#prayer" hx-swap="textContent" class="btn btn-secondary">
             <span class="htmx-indicator" id="loading">⚒ <i>(Working)</i> ⚒</span>
             </input>
             <label for="prayer">Prayer</label>
-            <textarea required id="prayer" name="prayer" rows="6"></textarea>
+            <textarea class="my-input" required id="prayer" name="prayer" rows="6"></textarea>
         </fieldset>
 
-        <fieldset class="centered">
-            <input type="submit" class="btn btn-primary btn-slim" />
-            <a href="/index.php" class="btn btn-secondary btn-slim">Cancel</a>
+        <fieldset class="my-fieldset centered">
+            <input type="submit" class="btn btn-primary" />
+            <a href="/index.php" class="btn btn-secondary">Cancel</a>
         </fieldset>
     </form>
 
