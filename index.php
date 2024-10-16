@@ -11,8 +11,8 @@
 </head>
 
 <body class="centered">
-    <a  class="btn btn-secondary" href="/prayer-search.php">Pray</a>
-    <a class="btn btn-secondary" href="/prayer-publish.php">Publish</a>
+    <a class="btn btn-secondary btn-fat" href="/prayer-search.php">Pray</a>
+    <a class="btn btn-secondary btn-fat" href="/prayer-publish.php">Publish</a>
 </body>
 
 </html>
