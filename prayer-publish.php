@@ -57,8 +57,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <fieldset class="my-fieldset">
             <label for=" file">You may take a picture of the prayer to pre-populate it below.</label>
             <input class="btn btn-secondary my-input" type="file" id="file" name="file">
-            <input class="btn btn-secondary my-input" value="Convert" type="button" hx-encoding="multipart/form-data" hx-indicator="#loading" hx-post="/ocr.php" hx-target="#prayer" hx-swap="textContent" />
-            <span class="htmx-indicator" id="loading">⚒ <i>(Working)</i> ⚒</span>
+            <button class="btn btn-secondary my-input" type="button" hx-encoding="multipart/form-data" hx-indicator="#loading" hx-post="/ocr.php" hx-target="#prayer" hx-swap="textContent">
+                Convert
+                <span class="htmx-indicator" id="loading">⚒ <i>(Working)</i> ⚒</span>
+            </button>
             <label for="prayer">Prayer</label>
             <textarea class="my-input" required id="prayer" name="prayer" rows="6"></textarea>
         </fieldset>

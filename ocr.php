@@ -1,6 +1,6 @@
 <?php
 
-$key = get_cfg_var("apiKey");
+$key = get_cfg_var("api_key");
 $url = "https://vision.googleapis.com/v1/images:annotate?key=$key";
 
 $bytes = file_get_contents($_FILES['file']['tmp_name']);
