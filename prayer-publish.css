@@ -10,8 +10,7 @@ fieldset {
     flex-direction: column;
     justify-content: space-around;
     gap: 5px;
-    font-size: 4vmin;
-    background-color: whitesmoke;
+    background-color: white;
     width: 50vw;
 }
 
@@ -19,7 +18,6 @@ fieldset input,
 fieldset select,
 fieldset textarea,
 fieldset a {
-    font-size: 4vmin;
     padding: 3vmin;
 }
 

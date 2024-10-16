@@ -15,8 +15,7 @@ fieldset:target {
 }
 
 fieldset {
-    font-size: 4vmin;
-    background-color: whitesmoke;
+    background-color: white;
     width: 50vw;
     height: 50vh;
 }
@@ -24,6 +23,5 @@ fieldset {
 fieldset input,
 fieldset select,
 fieldset a {
-    font-size: 4vmin;
     padding: 3vmin;
 }

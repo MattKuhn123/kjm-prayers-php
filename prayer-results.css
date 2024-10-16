@@ -12,6 +12,7 @@ table {
     border-color: black;
     border-style: solid;
     border-width: 1px;
+    background-color: white;
 }
 
 thead,
@@ -19,24 +20,11 @@ tfoot {
     font-size: 3vmin;
 }
 
-tbody {
-    font-size: 4vmin;
-}
-
-table:nth-child(even) {
-    background-color: whitesmoke;
-}
-
-table:nth-child(odd) {
-    background-color: whitesmoke;
-}
-
 .right {
     text-align: right;
 }
 
-.finished{
-    font-size: 4vmin;
+.finished {
     text-align: center;
     align-content: center;
     display: inline-block;
@@ -45,7 +33,7 @@ table:nth-child(odd) {
     border-radius: 5vmin;
     text-decoration: none;
     color: black;
-    background-color: whitesmoke;
+    background-color: white;
     width: 75vw;
     padding: 3vmin;
 }
@@ -55,7 +43,6 @@ table:nth-child(odd) {
     flex-direction: column;
     gap: 3vh;
     padding: 5vmin;
-    font-size: 4vmin;
-    background-color: whitesmoke;
+    background-color: white;
     width: 50vw;
 }
