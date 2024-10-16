@@ -11,10 +11,8 @@
 </head>
 
 <body>
-    <div id="menu">
-        <a href="/prayer-search.php">Pray</a>
-        <a href="/prayer-publish.php">Publish</a>
-    </div>
+    <a href="/prayer-search.php">Pray</a>
+    <a href="/prayer-publish.php">Publish</a>
 </body>
 
 </html>
