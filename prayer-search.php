@@ -41,7 +41,7 @@
             <input class="my-input" id="query-date-start" name="query-date-start" type="date" value="<?php echo date('Y-m-d', strtotime('-31 days')); ?>" />
             -
             <input class="my-input" id="query-date-end" name="query-date-end" type="date" value="<?php echo date('Y-m-d'); ?>" />
-            <input class="btn btn-primary" type="submit" value="Search" />
+            <input class="btn btn-primary my-input" type="submit" value="Search" />
         </fieldset>
 
     </form>
