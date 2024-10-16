@@ -73,11 +73,11 @@ $db->close();
                 <table class="prayer-result">
                     <thead class="smaller-text">
                         <tr>
-                            <td colspan="2"><?= htmlspecialchars($prayer["first_name"]) . " " . htmlspecialchars($prayer["last_name"]) ?></td>
+                            <td><?= htmlspecialchars($prayer["first_name"]) . " " . htmlspecialchars($prayer["last_name"]) ?></td>
+                            <td class="right"><time datetime="<?= $prayer["date"] ?>"><?= $prayer["date"] ?></time></td>
                         </tr>
                         <tr>
-                            <td><?= htmlspecialchars($prayer["county"]) ?></td>
-                            <td class="right"><time datetime="<?= $prayer["date"] ?>"><?= $prayer["date"] ?></time></td>
+                            <td colspan="2"><?= htmlspecialchars($prayer["county"]) ?></td>
                         </tr>
                     </thead>
                     <tbody>
@@ -93,7 +93,7 @@ $db->close();
                     </tbody>
                     <tfoot class="smaller-text">
                         <tr>
-                            <td><button class="btn btn-secondary">🙏</button></td>
+                            <td><button class="btn btn-secondary my-input">🙏</button></td>
                         </tr>
                     </tfoot>
                 </table>

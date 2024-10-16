@@ -14,7 +14,7 @@
     <form class="my-form" action="/prayer-results.php" id="prayer-search" method="GET">
         <fieldset class="my-fieldset" id="fieldset-query-start">
             <label for="query-start">Would you like to see the latest prayers? Or are you looking for something specific?</label>
-            <input class="btn btn-primary" type="submit" value="Take me to the latest prayers!" />
+            <input class="btn btn-primary my-input" type="submit" value="Take me to the latest prayers!" />
             <a href="#fieldset-query-name" class="btn btn-primary">I'm looking for something specific.</a>
         </fieldset>
 

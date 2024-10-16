@@ -1,5 +1,4 @@
 .prayer-results {
-    overflow-y: scroll;
     display: flex;
     align-items: center;
     flex-direction: column;

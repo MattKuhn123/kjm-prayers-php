@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    height: 98vh;
+    height: 97vh; /* I have to keep adjusting lower and lower to keep the scroll bar from appearing...? */
     background-color: orange;
     font-size: 4vmin;
 }
@@ -30,6 +30,7 @@ body {
 
 .my-input {
     padding: 3vmin;
+    font-size: 4vmin;
 }
 
 .btn {

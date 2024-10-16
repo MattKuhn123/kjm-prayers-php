@@ -51,18 +51,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <input class="my-input" required id="date" name="date" type="date" value="<?php echo date('Y-m-d'); ?>" />
         </fieldset>
 
-        <fieldset class="my-fieldset centered">
+        <fieldset class="my-fieldset">
             <label for=" file">You may take a picture of the prayer to pre-populate it below.</label>
-            <input value="" type="file" id="file" name="file" class="btn btn-secondary">
-            <input value="Convert" type="button" hx-encoding="multipart/form-data" hx-indicator="#loading" hx-post="/ocr.php" hx-target="#prayer" hx-swap="textContent" class="btn btn-secondary">
+            <input class="btn btn-secondary my-input" type="file" id="file" name="file">
+            <input class="btn btn-secondary my-input" value="Convert" type="button" hx-encoding="multipart/form-data" hx-indicator="#loading" hx-post="/ocr.php" hx-target="#prayer" hx-swap="textContent"/>
             <span class="htmx-indicator" id="loading">⚒ <i>(Working)</i> ⚒</span>
-            </input>
             <label for="prayer">Prayer</label>
             <textarea class="my-input" required id="prayer" name="prayer" rows="6"></textarea>
         </fieldset>
 
         <fieldset class="my-fieldset centered">
-            <input type="submit" class="btn btn-primary" />
+            <input type="submit" class="btn btn-primary my-input" />
             <a href="/index.php" class="btn btn-secondary">Cancel</a>
         </fieldset>
     </form>

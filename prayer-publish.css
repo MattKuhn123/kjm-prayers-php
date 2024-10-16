@@ -1,0 +1,4 @@
+/** it's weird, but otherwise the file btn is too big */
+input[type="file"].btn {
+    width: unset;
+}
