@@ -34,7 +34,6 @@ body {
 
 .btn {
     text-align: center;
-    display: inline-block;
     cursor: pointer;
     border: 1px solid rgb(140 140 140);
     border-radius: 3vmin;
@@ -51,5 +50,5 @@ body {
 
 .btn-secondary {
     color: black;
-    background-color: rgb(220 220 220);
+    background-color: whitesmoke;
 }

@@ -61,8 +61,8 @@ $db->close();
         <form class="centered my-form">
             <fieldset class="my-fieldset">
                 <p>We couldn't find the prayer you were looking for!</p>
-                <a href="/prayer-search.php" class="btn btn-primary btn-fat">Try again</a>
-                <a href="/index.php" class="btn btn-secondary btn-fat">Home</a>
+                <a href="/prayer-search.php" class="btn btn-primary">Try again</a>
+                <a href="/index.php" class="btn btn-secondary">Home</a>
             </fieldset>
         </form>
     <?php endif ?>
@@ -93,12 +93,12 @@ $db->close();
                     </tbody>
                     <tfoot class="smaller-text">
                         <tr>
-                            <td><button class="btn-fat">🙏</button></td>
+                            <td><button class="btn btn-secondary">🙏</button></td>
                         </tr>
                     </tfoot>
                 </table>
             <?php endforeach ?>
-            <a href="/index.php" class="finished">Finished</a>
+            <a href="/index.php" class="btn btn-secondary">Finished</a>
         </div>
     <?php endif ?>
 </body>

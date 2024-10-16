@@ -22,14 +22,3 @@
 .right {
     text-align: right;
 }
-
-.finished {
-    text-align: center;
-    align-content: center;
-    border: 1px solid rgb(140 140 140);
-    border-radius: 5vmin;
-    color: black;
-    background-color: white;
-    width: 75vw;
-    padding: 3vmin;
-}
