@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <input required id="date" name="date" type="date" value="<?php echo date('Y-m-d'); ?>" />
         </fieldset>
 
-        <fieldset class="centered>
+        <fieldset class="centered">
         <label for=" file">You may take a picture of the prayer to pre-populate it below.</label>
             <input value="" type="file" id="file" name="file" class="btn btn-secondary btn-slim">
             <input value="Convert" type="button" hx-encoding="multipart/form-data" hx-indicator="#loading" hx-post="/ocr.php" hx-target="#prayer" hx-swap="textContent" class="btn btn-secondary btn-slim">
