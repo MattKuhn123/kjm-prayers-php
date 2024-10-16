@@ -13,6 +13,9 @@
 <body class="centered">
     <form class="my-form">
         <fieldset class="my-fieldset actions">
+            <p>Welcome to the KJM prayer board!</p>
+        </fieldset>
+        <fieldset class="my-fieldset actions">
             <a class="btn btn-secondary" href="/prayer-search.php">Pray</a>
             <a class="btn btn-secondary" href="/prayer-publish.php">Publish</a>
         </fieldset>
