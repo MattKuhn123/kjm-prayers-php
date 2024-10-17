@@ -24,6 +24,7 @@ if (!$is_logged_in) {
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $success = false;
     try {
         $db = mysqli_connect();
         $first_name = trim($_POST["first-name"]);
@@ -37,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->execute();
         $stmt->close();
         $db->close();
-        echo ("Published prayer!");
+        $success = true;
     } catch (Exception $e) {
         echo ("Error!");
     }
@@ -48,6 +49,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <form class="my-form" id="prayer-publish" action="/prayer-publish.php" method="POST">
         <fieldset class="my-fieldset">
             <p>New prayer</p>
+        </fieldset>
+        <fieldset class="my-fieldset">
+            <?php if ($_SERVER["REQUEST_METHOD"] === "POST" && $success): ?>
+                <p id="result">Successfully published <?= $_POST["first-name"] ?>'s prayer!</p>
+                <a href="/index.php" class="btn btn-secondary">Finish</a>
+                <?php endif ?>
+                
+                <?php if ($_SERVER["REQUEST_METHOD"] === "GET"): ?>
+                    <p id="result">Please enter the prayer below.</p>
+                    <a href="/index.php" class="btn btn-secondary">Cancel</a>
+            <?php endif ?>
+
         </fieldset>
         <fieldset class="my-fieldset">
             <label for="first-name">First Name</label>
@@ -81,10 +94,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <a href="/index.php" class="btn btn-secondary">Cancel</a>
         </fieldset>
     </form>
-
-    <?php if ($_SERVER["REQUEST_METHOD"] === "POST"): ?>
-        <span id="result"></span>
-    <?php endif ?>
 </body>
 
 </html>
