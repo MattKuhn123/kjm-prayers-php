@@ -1,7 +1,7 @@
 <?php
 require './authentication.php';
 
-$is_logged_in = is_logged_in();
+$is_logged_in = is_logged_in_cookies();
 
 if (!$is_logged_in) {
     header("Location: /login-email.php");
@@ -68,7 +68,7 @@ $db->close();
 ?>
 
 <body>
-    <?php if ($prayers->num_rows == 0): ?>
+    <?php if ($prayers->num_rows === 0): ?>
         <form class="centered my-form">
             <fieldset class="my-fieldset">
                 <p>We couldn't find the prayer you were looking for!</p>

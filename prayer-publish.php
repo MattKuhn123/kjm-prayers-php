@@ -1,7 +1,7 @@
 <?php
 require './authentication.php';
 
-$is_logged_in = is_logged_in();
+$is_logged_in = is_logged_in_cookies();
 
 if (!$is_logged_in) {
     header("Location: /login-email.php");

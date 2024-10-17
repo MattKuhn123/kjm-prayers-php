@@ -12,6 +12,8 @@
 
 <?php
 
+require './mail-code.php';
+
 $code = null;
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($_POST["email"]) && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
@@ -21,9 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $db = mysqli_connect();
             $user_query = "SELECT * FROM `kjm`.`users` WHERE `email` = '$email'";
             $user_query_result = $db->query($user_query);
-            $user = $user_query_result->fetch_row()[0];
 
-            if ($user == null) {
+            if ($user_query_result->num_rows === 0) {
                 $user_insert = $db->prepare("INSERT INTO `kjm`.`prayers` (`email`) VALUES (?)");
                 $user_insert->bind_param("s", $email);
                 $user_insert->execute();
@@ -38,20 +39,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $user_update->execute();
             $user_update->close();
             
-            send_code($code);
-
             $db->close();
+
+            mail_code($email, $code);
         } catch (Exception $e) {
             echo("error");
         }
 
     }
-}
-
-
-function send_code($code)
-{
-    // TODO - Email(?)
 }
 ?>
 

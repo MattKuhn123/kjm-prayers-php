@@ -16,15 +16,10 @@ require './authentication.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($_POST["code"]) && isset($_POST["email"]) && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-        $code = trim($_POST["code"]);
-        $email = trim($_POST["email"]);
-
-        setcookie("code", $code);
-        setcookie("email", $email);
-
-        $is_logged_in = is_logged_in($code, $email);
+        $is_logged_in = is_logged_in_post();
 
         if ($is_logged_in) {
+            login_post_to_cookies();
             header("Location: /index.php");
             exit();
         }
