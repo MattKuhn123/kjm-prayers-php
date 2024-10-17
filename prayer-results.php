@@ -24,47 +24,52 @@ if (!$is_logged_in) {
 <?php
 $db = mysqli_connect();
 
-$query = "SELECT * FROM `kjm`.`prayers`";
-$where_clause = " WHERE 1 = 1";
-if (!empty($_GET["query-name"])) {
-    $query_name = trim($_GET["query-name"]);
-    $where_clause .= " AND CONCAT(`first_name`, `last_name`) LIKE '%$query_name%'";
+try {
+    $query = "SELECT * FROM `kjm`.`prayers`";
+    $where_clause = " WHERE 1 = 1";
+    if (!empty($_GET["query-name"])) {
+        $query_name = trim($_GET["query-name"]);
+        $where_clause .= " AND CONCAT(`first_name`, `last_name`) LIKE '%$query_name%'";
+    }
+
+    if (!empty($_GET["query-county"])) {
+        $query_county = trim($_GET["query-county"]);
+        $where_clause .= " AND `county` = '$query_county'";
+    }
+
+    if (!empty($_GET["query-date-start"])) {
+        $query_date_start = trim($_GET["query-date-start"]);
+        $where_clause .= " AND `date` >= STR_TO_DATE('$query_date_start', '%Y-%m-%d')";
+    }
+
+    if (!empty($_GET["query-date-end"])) {
+        $query_date_end = trim($_GET["query-date-end"]);
+        $where_clause .= " AND `date` <= STR_TO_DATE('$query_date_end', '%Y-%m-%d')";
+    }
+
+    $query .= $where_clause . " ORDER BY `date` DESC";
+
+    $page_index = 0;
+    if (!empty($_GET['query-page-index'])) {
+        $page_index = (int) trim($_GET["query-page-index"]);
+    }
+
+    $page_length = 10;
+    $offset = $page_index * $page_length;
+    $query .= " LIMIT " . $offset . "," . $page_length;
+
+    $prayers = $db->query($query);
+
+    $count_query = "SELECT COUNT(*) FROM `kjm`.`prayers`" . $where_clause;
+    $count_result = $db->query($count_query);
+    $count = $count_result->fetch_row()[0];
+    $pages = ceil($count / $page_length);
+} catch (Exception $e) {
+    echo ("Error!");
+} finally {
+    $db->close();
 }
 
-if (!empty($_GET["query-county"])) {
-    $query_county = trim($_GET["query-county"]);
-    $where_clause .= " AND `county` = '$query_county'";
-}
-
-if (!empty($_GET["query-date-start"])) {
-    $query_date_start = trim($_GET["query-date-start"]);
-    $where_clause .= " AND `date` >= STR_TO_DATE('$query_date_start', '%Y-%m-%d')";
-}
-
-if (!empty($_GET["query-date-end"])) {
-    $query_date_end = trim($_GET["query-date-end"]);
-    $where_clause .= " AND `date` <= STR_TO_DATE('$query_date_end', '%Y-%m-%d')";
-}
-
-$query .= $where_clause . " ORDER BY `date` DESC";
-
-$page_index = 0;
-if (!empty($_GET['query-page-index'])) {
-    $page_index = (int) trim($_GET["query-page-index"]);
-}
-
-$page_length = 10;
-$offset = $page_index * $page_length;
-$query .= " LIMIT " . $offset . "," . $page_length;
-
-$prayers = $db->query($query);
-
-$count_query = "SELECT COUNT(*) FROM `kjm`.`prayers`" . $where_clause;
-$count_result = $db->query($count_query);
-$count = $count_result->fetch_row()[0];
-$pages = ceil($count / $page_length);
-
-$db->close();
 ?>
 
 <body>

@@ -17,10 +17,12 @@ require './mail-code.php';
 $code = null;
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($_POST["email"]) && filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+        
+        $db = mysqli_connect();
+        
         try {
             $email = trim($_POST["email"]);
 
-            $db = mysqli_connect();
             $user_query = "SELECT * FROM `kjm`.`users` WHERE `email` = '$email'";
             $user_query_result = $db->query($user_query);
 
@@ -39,11 +41,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $user_update->execute();
             $user_update->close();
             
-            $db->close();
-
+            
             mail_code($email, $code);
         } catch (Exception $e) {
             echo("error");
+        } finally {
+            $db->close();
         }
 
     }
