@@ -27,6 +27,7 @@ if (!$is_logged_in) {
             <label for="query-start">Would you like to see the latest prayers? Or are you looking for something specific?</label>
             <input class="btn btn-primary my-input" type="submit" value="Take me to the latest prayers!" />
             <a href="#fieldset-query-name" class="btn btn-primary">I'm looking for something specific.</a>
+            <a href="/index.php" class="btn btn-secondary">Never mind</a>
         </fieldset>
 
         <fieldset class="my-fieldset" id="fieldset-query-name">
