@@ -1,3 +1,14 @@
+<?php
+require './authentication.php';
+
+$is_logged_in = is_logged_in();
+
+if (!$is_logged_in) {
+    header("Location: /login-email.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,22 +22,8 @@
     <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
 </head>
 
-<body class="centered">
-    <form class="my-form">
-        <fieldset class="my-fieldset">
-            <p>Login</p>
-        </fieldset>
-        <fieldset class="my-fieldset">
-            <label for="email">Email</label>
-            <input class="my-input" type="email" name="email" id="email" />
-            <p id="result"></p>
-            <button class="btn btn-primary my-input" hx-post="mail.php" hx-target="#result" hx-indicator="#loading">
-                Email
-                <span class="htmx-indicator" id="loading">⚒ <i>(Working)</i> ⚒</span>
-            </button>
-        </fieldset>
-    </form>
 
+<body class="centered">
     <form class="my-form">
         <fieldset class="my-fieldset">
             <p>Welcome to the KJM prayer board!</p>

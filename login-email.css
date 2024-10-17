@@ -1,0 +1,4 @@
+/** it's weird, but otherwise the btn is too big */
+a.btn {
+    width: unset;
+}
