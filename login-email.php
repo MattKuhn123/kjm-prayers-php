@@ -41,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $user_update->execute();
             $user_update->close();
             
-            
             mail_code($email, $code);
         } catch (Exception $e) {
             echo("error");
