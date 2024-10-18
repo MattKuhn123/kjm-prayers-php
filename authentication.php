@@ -20,9 +20,6 @@ function is_logged_in_post()
     $code = $_POST["code"];
     $email = $_POST["email"];
 
-    setcookie("code", $code);
-    setcookie("email", $email);
-
     return is_logged_in($code, $email);
 }
 
