@@ -74,7 +74,7 @@ try {
 
 <body>
     <?php if ($prayers->num_rows === 0): ?>
-        <form class="centered my-form">
+        <form class="my-form">
             <fieldset class="my-fieldset">
                 <p>We couldn't find the prayer you were looking for!</p>
                 <a href="/prayer-search.php" class="btn btn-primary">Try again</a>
@@ -84,7 +84,7 @@ try {
     <?php endif ?>
 
     <?php if ($prayers->num_rows > 0): ?>
-        <div class="centered gap">
+        <div class="my-form gap-3">
             <fieldset class="my-fieldset centered">
                 <p>Prayers</p>
             </fieldset>
