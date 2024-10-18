@@ -13,8 +13,6 @@
 ### how to run locally
 
 1. add `api_key` environment variable in `php.ini`
-1. add `mail_user` environment variable in `php.ini`
-1. add `mail_pass` environment variable in `php.ini` (surround with single quotes)
 1. uncomment *(delete the semicolon)* `extension=openssl` in `php.ini`
 1. uncomment *(delete the semicolon)* `extension=mysqli` in `php.ini`
 1. set the properties under `[MySQLi]`
@@ -116,8 +114,6 @@
     </IfModule>
     ```
 1. add `api_key` environment variable in `php.ini`
-1. add `mail_user` environment variable in `php.ini`
-1. add `mail_pass` environment variable in `php.ini` (surround with single quotes)
 1. uncomment *(delete the semicolon)* `extension=openssl` in `php.ini`
 1. uncomment *(delete the semicolon)* `extension=mysqli` in `php.ini`
 1. set the properties under `[MySQLi]`
