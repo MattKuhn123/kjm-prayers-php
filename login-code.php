@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <input required class="my-input" name="code" id="code" />
         </fieldset>
         <fieldset class="my-fieldset">
-            <input type="submit" value="login" class="btn btn-primary my-input" />
+            <input type="submit" value="Login" class="btn btn-primary my-input" />
         </fieldset>
     </form>
 </body>

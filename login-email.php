@@ -69,6 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <a class="btn btn-primary my-input" href="login-code.php">
                     Go
                 </a>
+                <p><i>We are currently working on the ability to email this code to you.</i></p>
             </fieldset>
         <?php endif ?>
     </form>
