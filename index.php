@@ -25,12 +25,12 @@ if (!$is_logged_in) {
 
 <body class="centered">
     <form class="my-form">
-        <fieldset class="my-fieldset">
+        <fieldset class="my-fieldset centered">
             <p>Welcome to the KJM prayer board!</p>
         </fieldset>
         <fieldset class="my-fieldset actions">
-            <a class="btn btn-secondary" href="/prayer-search.php">Pray</a>
-            <a class="btn btn-secondary" href="/prayer-publish.php">Publish</a>
+            <a class="btn btn-primary" href="/prayer-search.php">Pray</a>
+            <a class="btn btn-primary" href="/prayer-publish.php">Publish</a>
         </fieldset>
     </form>
 </body>

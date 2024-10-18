@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <body>
     <form class="my-form" id="prayer-publish" action="/prayer-publish.php" method="POST">
-        <fieldset class="my-fieldset">
+        <fieldset class="my-fieldset centered">
             <p>New prayer</p>
         </fieldset>
 

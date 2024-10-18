@@ -85,7 +85,7 @@ try {
 
     <?php if ($prayers->num_rows > 0): ?>
         <div class="centered gap">
-            <fieldset class="my-fieldset">
+            <fieldset class="my-fieldset centered">
                 <p>Prayers</p>
             </fieldset>
             <?php foreach ($prayers as $prayer): ?>
