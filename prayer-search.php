@@ -50,7 +50,7 @@ if (!$is_logged_in) {
 
         <fieldset class="my-fieldset" id="fieldset-query-date-start">
             <label for="query-date-start">Are there prayers that were published in a certain time frame that you'd like to pray for?</label>
-            <input class="my-input" id="query-date-start" name="query-date-start" type="date" value="<?php echo date('Y-m-d', strtotime('-100 days')); ?>" />
+            <input class="my-input" id="query-date-start" name="query-date-start" type="date" value="<?php echo date('Y-m-d', strtotime('-200 days')); ?>" />
             -
             <input class="my-input" id="query-date-end" name="query-date-end" type="date" value="<?php echo date('Y-m-d'); ?>" />
             <input class="btn btn-primary my-input" type="submit" value="Search" />
