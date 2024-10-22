@@ -55,18 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </fieldset>
 
         <fieldset class="my-fieldset">
-            <?php if ($_SERVER["REQUEST_METHOD"] === "POST" && $success): ?>
-                <p id="result">Successfully published <?= $_POST["first-name"] ?>'s prayer!</p>
-                <a href="/index.php" class="btn btn-secondary">Finish</a>
-            <?php endif ?>
-
-            <?php if ($_SERVER["REQUEST_METHOD"] === "GET"): ?>
-                <p id="result">Please enter the prayer below.</p>
-                <a href="/index.php" class="btn btn-secondary">Never mind</a>
-            <?php endif ?>
-        </fieldset>
-
-        <fieldset class="my-fieldset">
             <label for="first-name">First Name</label>
             <input class="my-input" required id="first-name" name="first-name" type="text" />
             <label for="last-name">Last Name</label>
@@ -95,6 +83,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         <fieldset class="my-fieldset centered">
             <input value="Publish" type="submit" class="btn btn-primary my-input" />
+            <?php if ($_SERVER["REQUEST_METHOD"] === "POST" && $success): ?>
+                <p id="result">Successfully published <?= $_POST["first-name"] ?>'s prayer!</p>
+            <?php endif ?>
+            <a href="/index.php" class="btn btn-secondary">Done</a>
         </fieldset>
     </form>
 </body>
