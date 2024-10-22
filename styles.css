@@ -1,7 +1,13 @@
+:root {
+    --primary-color: orange;
+    --accent-color: white;
+    --accent-color-100: whitesmoke;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     height: 97vh;
-    background-color: whitesmoke;
+    background-color: var(--accent-color-100);
     font-size: 4vmin;
 }
 
@@ -25,7 +31,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     gap: 5px;
-    background-color: white;
+    background-color: var(--accent-color);
     border-radius: 5px;
 }
 
@@ -65,10 +71,10 @@ body {
 
 .btn-primary {
     color: black;
-    background-color: orange;
+    background-color: var(--primary-color);
 }
 
 .btn-secondary {
     color: black;
-    background-color: whitesmoke;
+    background-color: var(--accent-color-100);
 }
