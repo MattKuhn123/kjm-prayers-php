@@ -2,13 +2,16 @@
     --primary-color: orange;
     --accent-color: white;
     --accent-color-100: whitesmoke;
+
+    --font-size-medium: 4vmin;
+    --font-size-small: 3vmin;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     height: 97vh;
     background-color: var(--accent-color-100);
-    font-size: 4vmin;
+    font-size: var(--font-size-medium);
 }
 
 .centered {
@@ -37,7 +40,7 @@ body {
 
 .my-input {
     padding: 3vmin;
-    font-size: 4vmin;
+    font-size: var(--font-size-medium);
 }
 
 .actions {
